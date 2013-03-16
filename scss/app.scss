@@ -1,0 +1,336 @@
+// Global Foundation Settings
+@import "settings";
+
+// Comment out this import if you are customizing you imports below
+@import "foundation";
+@import "compass";
+@import "font-awesome";
+@import "loginbox";
+@import "listyourspace";
+@import "searchresult";
+@import "post-page";
+
+// Import specific parts of Foundation by commenting the import "foundation"
+// and uncommenting what you want below. You must uncomment the following if customizing
+
+// @import "foundation/foundation-global";
+// @import "foundation/components/grid";
+// @import "foundation/components/visibility";
+// @import "foundation/components/block-grid";
+// @import "foundation/components/type";
+// @import "foundation/components/buttons";
+// @import "foundation/components/forms";
+// @import "foundation/components/custom-forms";
+// @import "foundation/components/button-groups";
+// @import "foundation/components/dropdown-buttons";
+// @import "foundation/components/split-buttons";
+// @import "foundation/components/flex-video";
+// @import "foundation/components/section";
+// @import "foundation/components/top-bar";
+// @import "foundation/components/orbit";
+// @import "foundation/components/reveal";
+// @import "foundation/components/joyride";
+// @import "foundation/components/clearing";
+// @import "foundation/components/alert-boxes";
+// @import "foundation/components/breadcrumbs";
+// @import "foundation/components/keystrokes";
+// @import "foundation/components/labels";
+// @import "foundation/components/inline-lists";
+// @import "foundation/components/pagination";
+// @import "foundation/components/panels";
+// @import "foundation/components/pricing-tables";
+// @import "foundation/components/progress-bars";
+// @import "foundation/components/side-nav";
+// @import "foundation/components/sub-nav";
+// @import "foundation/components/switch";
+// @import "foundation/components/magellan";
+// @import "foundation/components/tables";
+// @import "foundation/components/thumbs";
+// @import "foundation/components/tooltips";
+// @import "foundation/components/dropdown";
+
+@include font-face("Metrophobic", font-files("Metrophobic-webfont.eot", "Metrophobic-webfont.svg", "Metrophobic-webfont.ttf", "Metrophobic-webfont.woff"));
+
+body{
+	padding: 60px 0 0 0;
+}
+
+.subtle-bg{
+	@include background(image-url("satinweave.png"));
+	padding: 100px 0 0 0;
+}
+h1,h2,h3,h4,h5{
+	font-family:  $body-font-family;
+}
+.nav-bar{
+	position: fixed;
+	@include box-shadow(0px 3px 3px rgba(50, 50, 50, 0.50));
+	top: 0;
+	width: 100%;
+	padding: 20px 0;
+	@include background-image(linear-gradient(white, #eaeaea));
+	z-index: 98;
+}
+.logo{
+	a{
+		@include background(image-url("logo.png") no-repeat); 
+		height: image-height("logo.png");
+		width: image-width("logo.png");
+		display: block;	
+	}
+}
+.menu-buttons{
+	padding: 10px 0;
+	text-align: right;
+	line-height: 1;
+	margin-bottom: 0;
+	li{
+		list-style: none;
+		display: inline;
+		padding: 0 10px;
+	}
+	a{
+		color: #234c7d;
+		&:hover{
+			color: lighten(#234c7d, 15%);
+		}
+	}
+}
+.sign-up{
+	background: #ED560A;
+	color: #fff !important;
+	font-weight: bold;
+	@include border-radius(4px);
+	padding: 5px 10px;
+	&:hover{
+		color: #fff;
+		background: darken(#ED560A, 5%); 
+	}
+}
+.search-area{
+	height: 550px;
+	padding: 50px 0;
+	@include background(image-url("garage1.jpg")); 
+	@include background-size(768px 550px);
+	background-position: center 0;
+}
+.h1-wrapper{
+	text-align: center;
+	background: rgba(#3c638d, 0.6);
+	h2{
+		margin: 4px 0;
+		color: #fff;
+	}
+}
+.search-bar-wrapper{
+	background: rgba(#000, 0.7);
+	@include border-radius(3px);
+	@include single-box-shadow;
+	border: 1px solid #222;
+	margin: 25px;
+	padding: 5px 5px 15px;
+	color: #fff;
+	.columns, .row{
+		padding: 0;
+		margin: 0;
+	}
+	form{
+		margin: 0 !important;
+	}
+	input, label, .button, .custom.dropdown{
+		margin: 0;
+		font-size: 20px !important;
+	}
+	input{
+		margin-bottom: 10px;
+		@media only screen and (min-width: 768px){
+			margin-bottom: 0;
+		}
+	}
+	.custom.dropdown{
+		margin: 0 0 0 2px !important;
+		height: 2.3125em;
+		color: rgba(0, 0, 0, 0.75);
+		font-family: "Arial";
+		option{
+			padding: 0.5em;
+			height: 2.3125em;
+		}
+		ul li{
+			font-size: 20px !important;
+		}
+
+	}
+	.custom.dropdown.open ul{
+		z-index: 200;
+	}
+	form.custom .custom.dropdown .current{
+		margin-right: 1.313em;
+	}
+	label{
+		color: #fff;
+		text-align: center;
+		font-size: 25px;
+	}
+	.city-input{
+		padding: 0;
+		font-family: "Arial";
+		}
+	.button.prefix{
+		z-index: 0;
+	}
+}
+.under-fold{
+	height: 110%;
+	width: 100%;
+	padding: 0 0 90px 0;
+	position: relative;
+	@include background(image-url("gray-jean.jpg")); 
+}
+.how-it-works{
+	padding: 60px 0;
+	img{
+		&:hover{
+			@include box-shadow(0px 2px 2px rgba(50, 50, 50, 0.75));
+		}
+	}
+}
+.img-wrapper{
+	@include border-radius(150px);
+	position: relative;
+	overflow: hidden;
+	width: 220px;
+	height: 220px;
+	margin: 0 auto 40px;
+	img{
+		position: absolute;
+		top: 0;
+	}
+}
+.img-caption{
+	@include border-radius(150px);
+	position: absolute;
+	width: 220px;
+	height: 220px;
+	top: -220px;
+	padding: 70px 10px;
+	text-align: center;
+	background: rgba(#000, 0.7);
+	color: #fff;
+	@include transition(all 0.4s ease);
+	h5{
+		color: #fff;
+	}
+}
+.list-your-space{
+		img{
+			margin: 0 auto;
+			width: 60%;
+			@include box-shadow(0px 2px 2px rgba(50, 50, 50, 0.75));
+			@include transform(rotate(-7deg));
+		}
+		h1{
+			text-align: center;
+		}
+}
+.lys-text {
+    padding: 30px 20px;
+}
+.footer{
+	min-height: 50px;
+}
+.menu-icon{
+	span{
+	cursor: pointer;
+	box-shadow: 0 7px 0 3px #444, 0 17px 0 3px #444, 0 27px 0 3px #444;
+    display: block;
+    height: 0;
+    position: absolute;
+    right: 10px;
+    width: 26px;
+	}
+}
+form.custom .custom.dropdown{
+	background: #fff;
+}
+/****MEDIA QUERIES ***/
+@media only screen and (min-width: 768px){
+	.menu-icon{
+		display: none !important;
+	}
+	.search-area{
+		padding: 240px 0 0 0;
+		@include background-size();
+		height: 500px;
+		width: 100%;
+		h2{
+			@include text-shadow(0 0 2px #000000);
+		}
+	}
+	.search-bar-wrapper{
+		padding: 10px 15px;
+		.city-input{padding: 0 10px 0 0;}
+	}
+	.img-wrapper{
+		margin: 0;
+	}
+	.list-your-space{
+		h1{
+			margin: 20px 0 50px;
+		}
+		img{
+			width: 90%;
+			margin: 20px 0 0 40px;
+		}
+	}
+	
+}
+@media only screen and (min-width: 768px) and (max-width: 945px) {
+	.sign-up{
+		padding: 5px 4px;
+	}
+	.search-area{
+		height: auto;
+		@include background-size(cover);
+		padding: 99px;
+	}
+	.h1-wrapper h2{
+		font-size: 30px;
+	}
+	.search-bar-wrapper{
+		padding: 7px 3px;
+		input, label, .button, select{
+		margin: 0;
+		font-size: 15px;
+		}
+	}
+	.under-fold{
+	}
+	.img-wrapper{
+		height: 175px;
+		width: 175px;
+	}
+	.img-caption{
+		height: 175px;
+		width: 175px;
+		padding: 50px 10px;
+	}
+	.list-your-space{
+		h1{
+			font-size: 35px;
+			text-align: center;
+		}
+	}
+}
+@media only screen and (min-width: 945px){
+	.search-area{
+		position: fixed;
+		background-position: 0 -100px;
+	}
+	.under-fold{
+		top: 500px;
+	}
+	.lys-text{
+	padding: 30px 70px;
+	}
+}

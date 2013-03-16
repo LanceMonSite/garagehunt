@@ -1,0 +1,148 @@
+@import "social/*.png";
+$social: sprite-map("social/*.png");
+i{
+	background: $social;
+	display: inline-block;
+}
+@each $i in sprite_names($social){
+	.icn-#{$i}{
+		background-position: sprite-position($social, $i);
+		@include sprite-dimensions($social, $i);
+	}
+}
+.reveal-modal{
+	hr{
+		margin: 0;
+	}
+}
+.modal-header{
+  		padding: 9px 30px;
+  		@include background-image(linear-gradient(white, #eaeaea));
+  		border-bottom: 1px solid #D0D0D0;
+  		h4{
+  			margin-bottom: 0;
+  		}
+}
+.modal-body{
+	@extend .modal-header;
+	background: #fff;
+	position: relative;
+	padding: 15px;
+	&.email-section{
+		@include background-image(linear-gradient(white, #eaeaea));
+		padding: 30px 30px 10px;
+	}
+}
+.social-wrapper{
+	margin: 10px auto 20px;
+	text-align: center;
+}
+.icn-facebook{
+	margin-bottom: 0;
+	margin-right: 15px;
+	@media screen and (max-width: 483px){
+		margin-right: 0;
+		margin-bottom: 5px;
+	}
+	@media only screen and (min-width: 768px) and (max-width: 1260px){
+		margin-right: 0;
+		margin-bottom: 5px;
+	}
+	&:hover{
+		background-position: sprite-position($social, facebook-hover);
+	}
+}
+.icn-twitter{
+	margin-bottom: 0;
+	@media screen and (max-width: 483px){
+		margin-bottom: 5px;
+	}
+	@media only screen and (min-width: 768px) and (max-width: 1260px){
+		margin-bottom: 5px;
+	}
+	&:hover{
+		background-position: sprite-position($social, twitter-hover);
+	}
+}
+.icn-facebook-signup{
+	@extend .icn-facebook;
+	background-position: sprite-position($social, facebook-signup);
+	&:hover{
+		background-position: sprite-position($social, facebook-signup-hover);
+	}
+}
+.icn-twitter-signup{
+	@extend .icn-twitter;
+	background-position: sprite-position($social, twitter-signup);
+	&:hover{
+		background-position: sprite-position($social, twitter-signup-hover);
+	}
+}
+//media query
+@media only screen and (min-width: 768px){
+	.reveal-modal {
+	    padding: 0 !important;
+  	}
+}
+//end
+.or-seperator{
+	border: 1px solid #d2d2d2;
+	text-align: center;
+	position: absolute;
+	left: 50%;
+	top: -22px;
+	@include background-image(linear-gradient(white, #eaeaea));
+	z-index: 10;
+	width: 40px;
+	line-height: 40px;
+	margin-left: -20px;
+	@include border-radius(20px);
+}
+.email-form{
+	.button{
+		margin-top: 10px;
+	}
+}
+.signup-form{
+	@extend .email-form;
+}
+.remember{
+	padding: 0 !important;
+}
+.forgot{
+	@extend .remember;
+	text-align: right;
+	a{
+		font-size: 0.875em;
+	}
+}
+.close-reveal-modal{
+	top: -0.5em !important;
+	right: -0.5125em !important;
+	background: $primary-color;
+	color: #fff !important;
+	@include border-radius(20px);
+	width: 27px;
+	text-align: center;
+	border: 3px solid #fff;
+	&:hover{
+		background: darken($primary-color, 5%);
+	}
+}
+.show-signup-form{
+	p{
+		text-align: center;
+	}
+}
+.terms-conditions{
+	font-size: 0.8em;
+}
+.parsley-error{
+	@extend .error;
+}
+.parsley-error-list{
+	color: #C60F13;
+}
+.error input, .parsley-error input, input.error, input.parsley-error, .error textarea, .parsley-error textarea, textarea.error, textarea.parsley-error{
+	margin-bottom: 0 !important;
+}

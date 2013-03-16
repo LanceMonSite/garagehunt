@@ -1,0 +1,117 @@
+.lys-section{
+	padding-top: 50px;
+}
+.lys-header{
+	padding: 0 !important;
+	h2{
+		margin: 0;
+	}
+	h4{
+		color: #848484;
+	}
+}
+.lys-form-header{
+	p{
+		margin: 0 !important;
+		font-size: 0.9em;
+	}
+}
+.lys-form-footer{
+	@extend .lys-form-header;
+	width: 102% !important;
+	border-top: 1px solid #d2d2d2;
+	padding-top: 25px !important;
+	@include border-radius(0 0 5px 5px);
+	@media only screen and (min-width: 768px){
+		width: 100% !important;
+	}
+}
+.lys-faq{
+	h5{
+		text-align: center !important;
+	}
+}
+.lys-image{
+	img{
+		margin: 0 !important;
+		position: absolute;
+		z-index: -10;
+	}	
+}
+.lys-signup{
+	margin-top: 30px;
+	font-size: 1.1em !important;
+	@include border-radius(5px);
+	label,input, textarea, .custom.dropdown{
+		@media only screen and (min-width: 768px){
+			font-size: 1.2em !important;
+		}
+	}
+}
+#storage-form{
+	padding: 15px 0 0 0;
+	margin: 0;
+	label.right.inline{
+		padding-right: 10px !important;
+	}
+	textarea{
+		height: 100px;
+	}
+	@media only screen and (min-width: 768px){
+		padding: 10px 0 0;
+	}
+}
+#start-date{
+	@include background(image-url("calendar.png") no-repeat #fff);
+	padding-right: 5px;
+	background-position: 95% center;
+}
+#end-date{
+	@extend #start-date;
+}
+#prk-start-date{
+	@extend #start-date;
+}
+#prk-end-date{
+	@extend #start-date;
+}
+#storapark-start-date{
+	@extend #start-date;
+}
+#storapark-end-date{
+	@extend #start-date;
+}
+form.custom .custom.checkbox{
+	z-index: 5;
+}
+.form-decider{
+	@extend #storage-form;
+	margin: 30px 0 0;
+}
+.postfix.need-help{
+	border: none;
+	text-align: left;
+	margin: -22px 0 12px;
+	width: 50%;
+	font-size: 1em;
+	
+}
+#parking-form{
+	@extend #storage-form;
+}
+.row.move-down{
+	margin-bottom: 1.25em;
+}
+#storage-parking-form{
+	@extend #storage-form;
+}
+.ui-datepicker {
+    z-index: 50 !important;
+}
+.private-info{
+	@include background(image-url("lock.png") no-repeat scroll 5% center #234C7D);
+    border-radius: 4px 4px 4px 4px;
+    color: #FFFFFF;
+    font-size: 0.5em;
+    padding: 4px 15px 4px 30px;
+}

@@ -1,0 +1,149 @@
+.post-wrapper{
+	padding-right: 30px;
+}
+.post-title{
+	h1{
+		line-height: 18px;
+	}
+}
+.post-name-rating{
+	li{
+		list-style: none;
+	}
+}
+.name-rating{
+	display: inline;
+}
+.post-neighborhood{
+	display: inline;
+	float: right;
+}
+.post-large-image{
+	position: relative;
+	img{
+		@include border-radius(6px  6px 0 0);
+	}
+}
+.post-thumbnails{
+	min-height: 100px;
+	padding: 20px;
+	width: 100%;
+	margin-bottom: 20px;
+	@include background-image(linear-gradient(white, #f2f2f2));
+	@include box-shadow(0 0 4px rgba(0, 0, 0, 0.4) inset);
+	@include border-radius(0 0 6px  6px);
+	&:after{
+		clear: both;
+		content: "";
+    	display: table;
+	}
+}
+.thumbnail-1{
+	float: left;
+	height: 90px;
+	margin-right: 20px;
+	width: 140px;
+	border: 4px solid #fff;
+	@include background(image-url("attic-140x210.jpg"));
+	background-size: cover;
+	@include box-shadow(0 0 2px rgba(0, 0, 0, 0.4));
+}
+.thumbnail-2{
+	@extend .thumbnail-1;
+	@include background(image-url("attic-main-outside.jpg")); 
+	background-size: cover;
+}
+.post-size{
+	h3{
+		color: #fff;
+		margin-bottom: 0;
+	}
+	text-align: center;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background-color: rgba(#234C7D, 0.5);
+    border: 1px solid #234C7D;
+    border-radius: 3px 3px 3px 3px;
+    color: #FFFFFF;
+    padding: 1px 4px 2px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+.post-price{
+	h1{
+		margin: 0;
+		color: #333;
+	}
+	span{
+		font-size: 1.1em;
+	}
+	text-align: center;
+	margin-bottom: 20px; 
+}
+#slider-sqft-amount{
+	text-align: center;
+	font-weight: bold;
+	background-color: #234C7D;
+    border: 1px solid #234C7D;
+    border-radius: 3px 3px 3px 3px;
+    color: #FFFFFF;
+    padding: 1px 4px 2px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+    margin-top: -12px;
+}
+.space-owner{
+	@include background-image(linear-gradient(white, #f2f2f2));
+	margin-top: 40px;
+	margin-bottom: 40px;
+	@include border-radius(5px);
+	border: 1px solid #ccc;
+	padding: 20px;
+	text-align: center;
+	img{
+		width: 125px;
+		height: 125px;
+		border: 4px solid #fff;
+		@include border-radius(60px);
+		@include box-shadow(0 0 2px rgba(0, 0, 0, 0.4));
+	}
+	h5{
+		display: inline;
+		margin: 0 0 0 10px;
+	}
+}
+.ui-slider-handle{
+	background-color: #ED560A !important;
+    border-color: #BC4408 !important;
+    border-style: solid !important;
+    border-width: 1px !important;
+    color: white !important;
+    cursor: pointer;
+    @include border-radius(10px);
+}
+#slider-sqft-final{
+	.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus{
+	background: #ED560A !important;
+	border-color: #BC4408 !important;
+    border-style: solid !important;
+    border-width: 1px !important;
+    color: white !important;
+	}
+}
+
+.ui-slider{
+	background: #ddd;
+}
+.contact-owner{
+	margin: 15px auto 0;
+}
+.similar-listing{
+	text-align: center;
+	margin-bottom: 20px; 
+	h4{
+		margin: 0;
+	}
+	.list-item-month{
+		margin: 0 0 10px 0;
+		display: block;
+	}
+}
