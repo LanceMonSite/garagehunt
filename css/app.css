@@ -7200,7 +7200,7 @@ form.custom .custom.checkbox {
 /* line 79, ../scss/_searchresult.scss */
 .list-item-price {
   margin-top: 10px;
-  text-align: center;
+  text-align: center !important;
 }
 /* line 82, ../scss/_searchresult.scss */
 .list-item-price h2 {
@@ -7208,19 +7208,24 @@ form.custom .custom.checkbox {
   text-align: center;
   display: inline;
 }
+/* line 86, ../scss/_searchresult.scss */
+.list-item-price h2 sup {
+  font-size: 24px;
+  top: -0.3em;
+}
 @media only screen and (min-width: 768px) {
   /* line 79, ../scss/_searchresult.scss */
   .list-item-price {
     margin-top: 0px;
     text-align: left;
   }
-  /* line 90, ../scss/_searchresult.scss */
+  /* line 94, ../scss/_searchresult.scss */
   .list-item-price h2 {
-    display: block;
+    display: inline;
   }
 }
 
-/* line 95, ../scss/_searchresult.scss */
+/* line 100, ../scss/_searchresult.scss */
 .list-item-size {
   display: block;
   text-align: center;
@@ -7234,49 +7239,49 @@ form.custom .custom.checkbox {
   width: 50%;
 }
 @media only screen and (min-width: 768px) {
-  /* line 95, ../scss/_searchresult.scss */
+  /* line 100, ../scss/_searchresult.scss */
   .list-item-size {
-    width: 100%;
+    width: 75%;
   }
 }
 
-/* line 108, ../scss/_searchresult.scss */
+/* line 113, ../scss/_searchresult.scss */
 .list-item-month {
   display: inline;
   text-align: center;
 }
 @media only screen and (min-width: 768px) {
-  /* line 108, ../scss/_searchresult.scss */
+  /* line 113, ../scss/_searchresult.scss */
   .list-item-month {
     display: block;
   }
 }
 
-/* line 115, ../scss/_searchresult.scss */
+/* line 120, ../scss/_searchresult.scss */
 .gold-star {
   color: #EEA400;
 }
 
-/* line 118, ../scss/_searchresult.scss */
+/* line 123, ../scss/_searchresult.scss */
 .gray-star {
   color: #ccc;
 }
 
-/* line 121, ../scss/_searchresult.scss */
+/* line 126, ../scss/_searchresult.scss */
 .list-item-description {
   margin: 10px 0 0 0 !important;
 }
 
-/* line 124, ../scss/_searchresult.scss */
+/* line 129, ../scss/_searchresult.scss */
 .list-item-neighborhood {
   margin: 0 0 0 10px;
 }
 
-/* line 127, ../scss/_searchresult.scss */
+/* line 132, ../scss/_searchresult.scss */
 #slider-price-values, #slider-sqft-values {
   margin-bottom: 50px;
 }
-/* line 128, ../scss/_searchresult.scss */
+/* line 133, ../scss/_searchresult.scss */
 #slider-price-values li, #slider-sqft-values li {
   background-color: #234C7D;
   border: 1px solid #234c7d;
@@ -7288,17 +7293,17 @@ form.custom .custom.checkbox {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
 }
 
-/* line 140, ../scss/_searchresult.scss */
+/* line 145, ../scss/_searchresult.scss */
 #slider-price-min, #slider-sqft-min {
   float: left;
 }
 
-/* line 143, ../scss/_searchresult.scss */
+/* line 148, ../scss/_searchresult.scss */
 #slider-price-max, #slider-sqft-max {
   float: right;
 }
 
-/* line 150, ../scss/_searchresult.scss */
+/* line 155, ../scss/_searchresult.scss */
 #slider-sqft-range .ui-state-hover, #slider-sqft-range .ui-widget-content .ui-state-hover, #slider-sqft-range .ui-widget-header .ui-state-hover, #slider-sqft-range .ui-state-focus, #slider-sqft-range .ui-widget-content .ui-state-focus, #slider-sqft-range .ui-widget-header .ui-state-focus {
   background: #ed560a !important;
   border-color: #bc4408 !important;
@@ -7307,7 +7312,7 @@ form.custom .custom.checkbox {
   color: white !important;
 }
 
-/* line 159, ../scss/_searchresult.scss */
+/* line 164, ../scss/_searchresult.scss */
 #slider-price-range .ui-state-hover, #slider-price-range .ui-widget-content .ui-state-hover, #slider-price-range .ui-widget-header .ui-state-hover, #slider-price-range .ui-state-focus, #slider-price-range .ui-widget-content .ui-state-focus, #slider-price-range .ui-widget-header .ui-state-focus {
   background: #ed560a !important;
   border-color: #bc4408 !important;
@@ -7316,44 +7321,52 @@ form.custom .custom.checkbox {
   color: white !important;
 }
 
-/* line 1, ../scss/_post-page.scss */
-.post-wrapper {
-  padding-right: 30px;
+@media only screen and (min-width: 768px) {
+  /* line 1, ../scss/_post-page.scss */
+  .post-wrapper {
+    padding-right: 30px;
+  }
 }
 
-/* line 5, ../scss/_post-page.scss */
+/* line 8, ../scss/_post-page.scss */
 .post-title h1 {
   line-height: 18px;
 }
+@media only screen and (max-width: 768px) {
+  /* line 8, ../scss/_post-page.scss */
+  .post-title h1 {
+    font-size: 22px;
+  }
+}
 
-/* line 10, ../scss/_post-page.scss */
+/* line 16, ../scss/_post-page.scss */
 .post-name-rating li {
   list-style: none;
 }
 
-/* line 14, ../scss/_post-page.scss */
+/* line 20, ../scss/_post-page.scss */
 .name-rating {
   display: inline;
 }
 
-/* line 17, ../scss/_post-page.scss */
+/* line 23, ../scss/_post-page.scss */
 .post-neighborhood {
   display: inline;
   float: right;
 }
 
-/* line 21, ../scss/_post-page.scss */
+/* line 27, ../scss/_post-page.scss */
 .post-large-image {
   position: relative;
 }
-/* line 23, ../scss/_post-page.scss */
+/* line 29, ../scss/_post-page.scss */
 .post-large-image img {
   -webkit-border-radius: 6px 6px 0 0;
   -moz-border-radius: 6px 6px 0 0;
   border-radius: 6px 6px 0 0;
 }
 
-/* line 27, ../scss/_post-page.scss */
+/* line 33, ../scss/_post-page.scss */
 .post-thumbnails {
   min-height: 100px;
   padding: 20px;
@@ -7371,14 +7384,14 @@ form.custom .custom.checkbox {
   -moz-border-radius: 0 0 6px 6px;
   border-radius: 0 0 6px 6px;
 }
-/* line 35, ../scss/_post-page.scss */
+/* line 41, ../scss/_post-page.scss */
 .post-thumbnails:after {
   clear: both;
   content: "";
   display: table;
 }
 
-/* line 41, ../scss/_post-page.scss */
+/* line 47, ../scss/_post-page.scss */
 .thumbnail-1, .thumbnail-2 {
   float: left;
   height: 90px;
@@ -7392,13 +7405,13 @@ form.custom .custom.checkbox {
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
 }
 
-/* line 51, ../scss/_post-page.scss */
+/* line 57, ../scss/_post-page.scss */
 .thumbnail-2 {
   background: url('../img/attic-main-outside.jpg?1363402493');
   background-size: cover;
 }
 
-/* line 56, ../scss/_post-page.scss */
+/* line 62, ../scss/_post-page.scss */
 .post-size {
   text-align: center;
   position: absolute;
@@ -7411,28 +7424,28 @@ form.custom .custom.checkbox {
   padding: 1px 4px 2px;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
 }
-/* line 57, ../scss/_post-page.scss */
+/* line 63, ../scss/_post-page.scss */
 .post-size h3 {
   color: #fff;
   margin-bottom: 0;
 }
 
-/* line 72, ../scss/_post-page.scss */
+/* line 78, ../scss/_post-page.scss */
 .post-price {
   text-align: center;
   margin-bottom: 20px;
 }
-/* line 73, ../scss/_post-page.scss */
+/* line 79, ../scss/_post-page.scss */
 .post-price h1 {
   margin: 0;
   color: #333;
 }
-/* line 77, ../scss/_post-page.scss */
+/* line 83, ../scss/_post-page.scss */
 .post-price span {
   font-size: 1.1em;
 }
 
-/* line 83, ../scss/_post-page.scss */
+/* line 89, ../scss/_post-page.scss */
 #slider-sqft-amount {
   text-align: center;
   font-weight: bold;
@@ -7445,7 +7458,20 @@ form.custom .custom.checkbox {
   margin-top: -12px;
 }
 
-/* line 94, ../scss/_post-page.scss */
+/* line 100, ../scss/_post-page.scss */
+#slider-amount-total {
+  text-align: center;
+  margin-bottom: 15px;
+  padding: 5px;
+  background: #ddd;
+}
+
+/* line 106, ../scss/_post-page.scss */
+.current-total {
+  font-size: 35px;
+}
+
+/* line 109, ../scss/_post-page.scss */
 .space-owner {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #f2f2f2));
   background-image: -webkit-linear-gradient(#ffffff, #f2f2f2);
@@ -7461,7 +7487,7 @@ form.custom .custom.checkbox {
   padding: 20px;
   text-align: center;
 }
-/* line 102, ../scss/_post-page.scss */
+/* line 117, ../scss/_post-page.scss */
 .space-owner img {
   width: 125px;
   height: 125px;
@@ -7473,13 +7499,13 @@ form.custom .custom.checkbox {
   -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
 }
-/* line 109, ../scss/_post-page.scss */
+/* line 124, ../scss/_post-page.scss */
 .space-owner h5 {
   display: inline;
   margin: 0 0 0 10px;
 }
 
-/* line 114, ../scss/_post-page.scss */
+/* line 129, ../scss/_post-page.scss */
 .ui-slider-handle {
   background-color: #ed560a !important;
   border-color: #bc4408 !important;
@@ -7492,7 +7518,7 @@ form.custom .custom.checkbox {
   border-radius: 10px;
 }
 
-/* line 124, ../scss/_post-page.scss */
+/* line 139, ../scss/_post-page.scss */
 #slider-sqft-final .ui-state-hover, #slider-sqft-final .ui-widget-content .ui-state-hover, #slider-sqft-final .ui-widget-header .ui-state-hover, #slider-sqft-final .ui-state-focus, #slider-sqft-final .ui-widget-content .ui-state-focus, #slider-sqft-final .ui-widget-header .ui-state-focus {
   background: #ed560a !important;
   border-color: #bc4408 !important;
@@ -7501,29 +7527,69 @@ form.custom .custom.checkbox {
   color: white !important;
 }
 
-/* line 133, ../scss/_post-page.scss */
+/* line 148, ../scss/_post-page.scss */
 .ui-slider {
   background: #ddd;
 }
 
-/* line 136, ../scss/_post-page.scss */
+/* line 151, ../scss/_post-page.scss */
 .contact-owner {
   margin: 15px auto 0;
 }
 
-/* line 139, ../scss/_post-page.scss */
+/* line 154, ../scss/_post-page.scss */
 .similar-listing {
   text-align: center;
   margin-bottom: 20px;
 }
-/* line 142, ../scss/_post-page.scss */
+/* line 157, ../scss/_post-page.scss */
 .similar-listing h4 {
   margin: 0;
 }
-/* line 145, ../scss/_post-page.scss */
+/* line 160, ../scss/_post-page.scss */
 .similar-listing .list-item-month {
   margin: 0 0 10px 0;
   display: block;
+}
+
+/* line 165, ../scss/_post-page.scss */
+.post-large-map {
+  position: relative;
+}
+
+/* line 168, ../scss/_post-page.scss */
+.post-map-marker {
+  position: absolute;
+  background-color: rgba(35, 76, 125, 0.4);
+  border: 1px solid #234c7d;
+  -webkit-border-radius: 75px;
+  -moz-border-radius: 75px;
+  border-radius: 75px;
+  width: 150px;
+  height: 150px;
+  top: 25%;
+  right: 50%;
+}
+@media only screen and (max-width: 768px) {
+  /* line 168, ../scss/_post-page.scss */
+  .post-map-marker {
+    top: 10%;
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* line 183, ../scss/_post-page.scss */
+.post-rating-item {
+  margin-bottom: 20px;
+}
+/* line 184, ../scss/_post-page.scss */
+.post-rating-item img {
+  width: 75px;
+  height: 75px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  border-radius: 40px;
 }
 
 @font-face {
