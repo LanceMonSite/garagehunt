@@ -6,7 +6,7 @@
 	<title>GarageHunt │ Storage Space and Parking Spots from People in your Neighborhood </title>
 	<link rel="stylesheet" href="css/normalize.css" />
 	<link rel="stylesheet" href="css/app.css" />
-	<link rel="stylesheet" href="css/jquery-ui-1.10.1.custom.min.css" />
+	<link rel="stylesheet" href="css/jquery-ui-1.10.1.custom.min.css"/>
 
 </head>
 <body class="subtle-bg">
@@ -61,22 +61,66 @@
 					<h4>Description</h4>
 					<p>Wonderful space available for immediate storage. Bring your furniture, boxes or whatever else you like. I will happily store them for you safely.</p>
 				</div>
+				<hr>
+				<div class="post-large-map">
+					<span class="post-map-marker"></span>
+					<img src="img/map-large.jpg" alt="">
+				</div>
+				<hr>
+				<div class="post-ratings">
+					<h4>Ratings and reviews</h4>
+					<div class="post-rating-item">
+						<div class="row">
+							<div class="large-2 columns">
+								<img src="img/reza.jpg" alt="">
+							</div>
+							<div class="large-10 columns">
+								<span class="icon-star gold-star"></span>
+				        <span class="icon-star gold-star"></span>
+				        <span class="icon-star gold-star"></span>
+				        <span class="icon-star gold-star"></span>
+				        <span class="icon-star gold-star"></span>
+								<p>Mr. Bean is fantastic, he is always available when I need to access my stuff and is always super helpful, 2 thumbs up!</p>
+							</div>
+						</div>
+					</div>
+					<div class="post-rating-item">
+						<div class="row">
+							<div class="large-2 columns">
+								<img src="img/hamed.jpg" alt="">
+							</div>
+							<div class="large-10 columns">
+								<span class="icon-star gold-star"></span>
+				        <span class="icon-star gold-star"></span>
+				        <span class="icon-star gold-star"></span>
+				        <span class="icon-star gold-star"></span>
+				        <span class="icon-star gold-star"></span>
+								<p>Mr. Bean is fantastic, he is always available when I need to access my stuff and is always super helpful, 2 thumbs up!</p>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="large-4 columns">
       <div class="side-bar">
     		<div class="post-price">
-    			<h1>$1/sq.ft</h1>
+    			<h1 id="post-price" data-sqft="0.75">$0.75/sq.ft</h1>
     			<span>per month</span>        			
     		</div>
       	<hr>
       	<p>How much space do you need?</p>
       	<div class="row">
-      		<div class="large-8 columns">
+      		<div class="large-8 small-8 columns">
       			<div id="slider-sqft-final"></div>
       		</div>
-      		<div class="large-4 columns">
-      			<div id="slider-sqft-amount"></div>
+      		<div class="large-4 small-4 columns">
+      			<div id="slider-sqft-amount">
+      				<div class="current-sqft">
+      					 
+      				</div>
+      					sq.ft
+      			</div>
       		</div>
     		</div>
 				<hr>
@@ -103,6 +147,19 @@
 							</div>
 						</div>
 					</div>
+				</div>
+				<div id="slider-amount-total">
+					<div class="row">
+						<div class="large-6 columns">
+							<h4>Total:</h4>
+						</div>
+						<div class="large-6 columns">
+							<div class="current-total">
+							</div>
+							<span> per month</span>
+						</div>
+					</div>
+					
 				</div>
        	<a href="#" class="button expand">Book Space</a> 			
       </div>
