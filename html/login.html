@@ -1,0 +1,34 @@
+<!-- BEGIN LOGIN POPUP -->
+<div id="js-login-modal" class="reveal-modal small reveal-login">
+  <div class="modal-header">
+    <h4>Login to Garage Hunt!</h4>
+  </div>
+  <div class="modal-body">
+    <div class="social-wrapper">
+      <a href="#"><i class="icn-facebook"></i></a>
+      <a href="#"><i class="icn-twitter"></i></a>
+    </div>
+  </div>
+  <hr>
+  <div class="modal-body email-section">
+    <span class="or-seperator">OR</span>
+    <form id="login-form" class="email-form" data-validate="parsley">
+      <input type="email" data-trigger="change" data-required="true" data-type="email" data-required-message="Please enter your email address" data-type-email-message="Please enter a valid email address" placeholder="Email">
+      <input type="password" data-required="true" data-required-message="Please enter your password" placeholder="Password">
+      <div class="row">
+        <div class="large-6 small-6 columns remember">
+          <label for="checkbox1">
+            <input type="checkbox" id="checkbox1" data-mincheck="0" data-group="mygroup">
+            <span class="custom checkbox"></span> Remember Me
+          </label>
+        </div>
+        <div class="large-6 small-6 columns forgot">
+          <a href="#">Forgot Password</a>
+        </div>
+      </div>
+      <button href="#" class="button">login</button>
+    </form>
+  </div>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+<!-- END LOGIN POPUP -->
