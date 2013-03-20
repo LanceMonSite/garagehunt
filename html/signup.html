@@ -1,0 +1,32 @@
+<!-- BEGIN SIGNUP POPUP -->
+<div id="js-signup-modal" class="reveal-modal small reveal-login">
+  <div class="modal-header">
+    <h4>Sign up for Garage Hunt!</h4>
+  </div>
+  <div class="modal-body">
+    <div class="social-wrapper">
+      <a href="#"><i class="icn-facebook-signup"></i></a>
+      <a href="#"><i class="icn-twitter-signup"></i></a>
+    </div>
+  </div>
+  <hr>
+  <div class="modal-body email-section">
+    <span class="or-seperator">OR</span>
+    <a href="#" id="js-show-signup-form" class="show-signup-form">
+      <p>Sign up using your e-mail address</p>
+    </a>
+    <form id="signup-form" class="signup-form" data-validate="parsley" style="display:none">
+      <input type="text" data-required="true" data-required-message="First Name is required" placeholder="First Name">
+      <input type="text" data-required="true" data-required-message="Last Name is required" placeholder="Last Name">
+      <input type="email" data-trigger="change" data-required="true" data-type="email" data-required-message="Email is Required" data-type-email-message="Please enter a valid email address" placeholder="Email">
+      <input id="password" type="password" data-required="true"  data-required-message="Password is required" data-minlength="6" data-minlength-message="Password should be at least 6 characters" placeholder="Password">
+      <input type="password" data-required="true" data-equalto="#password" data-required-message="Please confirm your password" data-equalto-message="Must match password" placeholder="Confirm Password">
+      <button href="#" class="button" type="submit">Create Account</button>
+    </form>
+    <p class="terms-conditions">
+      By clicking <span class="fb-or-email">"Signup with Facebook or Twitter"</span> you confirm that you accept the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy.</a> 
+    </p>
+  </div>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+<!-- END SIGNUP POPUP -->
