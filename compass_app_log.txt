@@ -2868,3 +2868,15 @@
 2013-03-18 10:10:36    remove ../../../../webdev/garagehunt/garagehunt/img/social-s9c45451419.png
 2013-03-18 10:10:37    create ../../../../webdev/garagehunt/garagehunt/img/social-s34cf003c1c.png
 2013-03-18 10:10:38 overwrite css/app.css 
+2013-03-20 12:03:30     error scss/app.scss (Line 36 of _vertical_rhythm.scss: Incompatible units: '%' and 'px'.)
+2013-03-20 12:03:30 overwrite css/app.css 
+2013-03-20 12:04:55    remove ../../../../webdev/garagehunt/garagehunt/img/social-s34cf003c1c.png
+2013-03-20 12:04:56    create ../../../../webdev/garagehunt/garagehunt/img/social-s9c45451419.png
+2013-03-20 12:04:56    remove ../../../../webdev/garagehunt/garagehunt/img/social-s9c45451419.png
+2013-03-20 12:04:57    create ../../../../webdev/garagehunt/garagehunt/img/social-s34cf003c1c.png
+2013-03-20 12:05:00 overwrite css/app.css 
+2013-03-20 12:06:54    remove ../../../../webdev/garagehunt/garagehunt/img/social-s34cf003c1c.png
+2013-03-20 12:06:54    create ../../../../webdev/garagehunt/garagehunt/img/social-s9c45451419.png
+2013-03-20 12:06:55    remove ../../../../webdev/garagehunt/garagehunt/img/social-s9c45451419.png
+2013-03-20 12:06:55    create ../../../../webdev/garagehunt/garagehunt/img/social-s34cf003c1c.png
+2013-03-20 12:06:59 identical css/app.css 
