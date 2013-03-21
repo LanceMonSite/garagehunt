@@ -1,4 +1,4 @@
-<section class="lys-section">
+<section class="lys-section subtle-bg" id="lys-section">
 	<div class="row">
 		<div class="large-9 large-centered columns">
 			<div class="lys-header">
@@ -9,12 +9,12 @@
 			<div class="lys-signup">
 				<form class="custom form-decider">
 	        <label for="space-type">What kind of space do you have?</label>
-		        <select id="space-type" class="large">
-		        	<option DISABLED selected>Please Choose</option>
-							<option value="storage">Storage Space</option>
-							<option value="parking">Parking Spot</option>
-							<option value="both">Space can be used for both</option>
-            </select>
+	        <select id="space-type" class="large">
+	        	<option DISABLED selected>Please Choose</option>
+						<option value="storage">Storage Space</option>
+						<option value="parking">Parking Spot</option>
+						<option value="both">Space can be used for both</option>
+          </select>
 				</form>
 				<!-- STORAGE FORM BEGIN -->
 				<form id="storage-form" class="custom">
@@ -279,4 +279,19 @@
 			</div>			
 		</div>
 	</div>
+	<!-- SQUARE FOOT HELPER POPUP -->
+	<div id="show-sqft-help" class="reveal-modal small">
+		<div class="modal-header">
+			<h4>Help choosing sizing</h4>
+		</div>
+		<div class="modal-body">
+			<hr>
+			<a class="close-reveal-modal">&#215;</a>
+		</div> 
+	</div>
+	<script>
+		(function() {
+			$('#lys-section').foundation();
+		})();
+	</script>
 </section>

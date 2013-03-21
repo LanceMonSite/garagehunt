@@ -1,4 +1,4 @@
-(function() {
+(function(window, $, _, Parse) {
   Parse.initialize(
     "nYOW9blioKxaqbHySYryq4t220leMIcZhIjKc4ap",
     "0CaMVQlg64NyfvDf4zH9ILsvzLpAQoqBQmk44S08"
@@ -9,7 +9,7 @@
     $(this).foundation();
 
     // Initializes the MVC
-    new Views.storagr();
+    new Storagr.views.main();
 
     //homepage images text dropdown
     $('.img-wrapper').on('mouseenter', (function() {
@@ -133,4 +133,4 @@
    //      });
 
   });
-})();
+})(window, jQuery, _, Parse, undefined);
