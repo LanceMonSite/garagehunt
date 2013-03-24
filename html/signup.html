@@ -1,11 +1,27 @@
-<div class="reveal-modal small reveal-login" id="js-signup-modal">
+<div class="reveal-modal my-reveal reveal-login" id="js-signup-modal">
   <div class="modal-header">
     <h4>Sign up for Garage Hunt!</h4>
   </div>
   <div class="modal-body">
     <div class="social-wrapper">
-      <a href="javascript:void(0)"><i class="icn-facebook-signup"></i></a>
-      <a href="javascript:void(0)"><i class="icn-twitter-signup"></i></a>
+      <div class="row">
+        <div class="large-6 columns">
+          <a href="#">
+            <div class="facebook-signup">
+              <span class="icon-facebook icon-2x fb-left"></span>
+              <span class="fb-main-sup"></span>
+            </div>
+          </a>
+        </div>
+        <div class="large-6 columns">
+          <a href="#">
+            <div class="twitter-signup">
+              <span class="icon-twitter tw-left"></span>
+              <span class="tw-main-sup"></span>
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
   <hr>
@@ -17,16 +33,16 @@
     <form class="signup-form" id="js-signup-form" data-validate="parsley" style="display:none">
       <input id="js-su-fullname" data-required="true" data-required-message="First Name is required" type="text" placeholder="Full Name">
       <input id="js-su-email" data-trigger="change" data-required="true" data-type="email" data-required-message="Email is Required" data-type-email-message="Please enter a valid email address" type="email" placeholder="Email">
-      <input id="js-su-password" type="password" data-required="true"  data-required-message="Password is required" data-minlength="6" data-minlength-message="Password should be at least 6 characters" placeholder="Password">
+      <input id="js-su-password" data-required="true"  data-required-message="Password is required" data-minlength="6" data-minlength-message="Password should be at least 6 characters" type="password" placeholder="Password">
       <div class="row">
         <div class="large-12 small-12 columns remember">
           <label for="js-su-show-passwd">
-            <input id="js-su-show-passwd" type="checkbox" data-mincheck="0" data-group="mygroup">
+            <input id="js-su-show-passwd" data-mincheck="0" data-group="mygroup" type="checkbox">
             <span class="custom checkbox"></span>Show password
           </label>
         </div>
       </div>
-      <button id="js-su-submit" class="button" type="submit">Create Account</button>
+      <button class="button" id="js-su-submit" type="submit">Create Account</button>
     </form>
     <p class="terms-conditions">
       By clicking <span class="fb-or-email">"Signup with Facebook or Twitter"</span> you confirm that you accept the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy.</a> 

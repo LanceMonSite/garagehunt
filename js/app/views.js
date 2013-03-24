@@ -73,7 +73,8 @@
         "click #js-menu-login": "showModalLogin",
         "click #js-menu-signup": "showModalSignup",
 
-        "click #js-menu-listyourspace": "pivotToListYourSpace"
+        "click #js-menu-listyourspace": "pivotToListYourSpace",
+        "click #js-dropdown": "dropUserMenu"
       },
 
       showModalLogin: function() {
@@ -86,6 +87,13 @@
 
       pivotToListYourSpace: function() {
         new Storagr.views.listYourSpacePage();
+      },
+
+      dropUserMenu: function() {
+        console.log("msg");
+        var $dropdown = $('#js-user-dropdown');
+        $dropdown.toggleClass("open");
+        $dropdown.foundation();
       },
 
       render: function() {

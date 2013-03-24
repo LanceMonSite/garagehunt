@@ -1,11 +1,27 @@
-<div class="reveal-modal small reveal-login" id="js-login-modal" >
+<div class="reveal-modal my-reveal reveal-login" id="js-login-modal">
   <div class="modal-header">
     <h4>Login to Garage Hunt!</h4>
   </div>
   <div class="modal-body">
     <div class="social-wrapper">
-      <a href="#"><i class="icn-facebook"></i></a>
-      <a href="#"><i class="icn-twitter"></i></a>
+      <div class="row">
+        <div class="large-6 columns">
+          <a href="#">
+            <div class="facebook-login">
+              <span class="icon-facebook icon-2x fb-left"></span>
+              <span class="fb-main"></span>
+            </div>
+          </a>
+        </div>
+        <div class="large-6 columns">
+          <a href="#">
+            <div class="twitter-login">
+              <span class="icon-twitter tw-left"></span>
+              <span class="tw-main"></span>
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
   <hr>
@@ -25,7 +41,7 @@
           <a href="#">Forgot Password</a>
         </div>
       </div>
-      <button id="js-lo-submit" class="button" type="submit">login</button>
+      <button class="button" id="js-lo-submit" type="submit">login</button>
     </form>
   </div>
   <a class="close-reveal-modal">&#215;</a>

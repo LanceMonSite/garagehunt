@@ -1,22 +1,51 @@
-<nav class="nav-bar">
-  <div class="row">
-    <div class="large-3 small-10 columns logo">
-      <a href="/"></a>
-    </div>
-    <div class="menu-icon small-2 columns">
-      <a href="javascript:void(0)"><span></span> </a>
-    </div>
-    <div class="large-5 large-offset-4 columns">
-      <ul class="menu-buttons hide-for-small" id="js-menu">
-        <li><a id="js-menu-login" href="javascript:void(0)">login</a></li>
-        <li><a id="js-menu-signup" href="javascript:void(0)">signup</a></li>
-        <li><a id="js-menu-listyourspace" href="#!/list-your-space" class="sign-up">list your space</a></li>
+<div class="contain-to-grid fixed">
+  <nav class="top-bar">
+    <ul class="title-area">
+      <li><a class="logo" href="/"></a></li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+    </ul>
+    <section class="top-bar-section">
+      <ul class="right">
+        <!-- BEGIN DESKTOP LOGGED IN MENU ITEMS -->
+        <li class="divider"></li>
+        <li>
+          <a class="user-dropdown hide-for-small" id="js-dropdown" data-dropdown="js-user-dropdown" href="javascript:void(0)">
+            <img src="img/reza.jpg" data-dropdown="js-user-dropdown" alt="profile picture">
+            <span data-dropdown="js-user-dropdown">reza</span><span class="icon-caret-down" data-dropdown="js-user-dropdown"></span>
+          </a>
+          <ul class="f-dropdown user-dropdown-content" id="js-user-dropdown" data-dropdown-content>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Bookings</a></li>
+            <li><a href="#">Listings</a></li>
+            <li><a href="#">Account</a></li>
+            <li><a href="#">Log out</a></li>
+          </ul>
+        </li>
+        <!-- END -->
+        <!-- BEGIN MOBILE LOGGED IN MENU ITEMS -->
+        <li><a class="show-for-small logged-in-item" href="#">dashboard</a></li>
+        <li class="divider show-for-small"></li>
+        <li><a class="show-for-small logged-in-item" href="#">bookings</a></li>
+        <li class="divider show-for-small"></li>
+        <li><a class="show-for-small logged-in-item" href="#">listings</a></li>
+        <li class="divider show-for-small"></li>
+        <li><a class="show-for-small logged-in-item" href="#">account</a></li>
+        <li class="divider show-for-small"></li>
+        <li><a class="show-for-small logged-in-item" href="#">log out</a></li>
+        <!-- END -->
+        <!-- BEGIN LOGGED OUT MENU ITEMS -->
+        <li class="divider"></li>
+        <li><a class="menu-login" id="js-menu-login" href="javascript:void(0)">log in</a></li>
+        <li class="divider"></li>
+        <li><a class="menu-signup" id="js-menu-signup" href="javascript:void(0)">sign up</a></li>
+        <!-- END -->
+        <li><a class="list-your-space-button" id="js-menu-listyourspace" href="#!/list-your-space">list your space</a></li>
       </ul>
-    </div>
-  </div>
+    </section>
+  </nav>
   <script>
     (function() {
       $(document.body).foundation();
     })();
   </script>
-</nav>
+</div>

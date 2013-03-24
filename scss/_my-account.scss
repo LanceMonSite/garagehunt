@@ -1,0 +1,90 @@
+.my-account-section{
+  padding-top: 40px;
+}
+.user-dropdown{
+  @extend .menu-login;
+  >img{
+    width: 30px;
+    margin-right: 5px;
+    vertical-align: middle;
+    @include border-radius(3px);
+  }
+}
+.user-dropdown-content{
+  background: #fff !important;
+  a{
+    line-height: 22px !important;
+  }
+}
+.f-dropdown{
+  text-align: left;
+  li{
+    width: 100%;
+    a{
+      &:hover{
+        background: none !important;
+      }
+    }
+  }
+}
+.f-dropdown.user-dropdown-content{
+  max-width: 150px;
+  @include border-radius(0 0 10px 10px);
+  li{
+    border-bottom: 1px solid #ececec;
+    &:hover{
+      @include background-image($primary-gradient !important);
+    }
+    &:hover > a{
+      color: #fff;
+    }
+    &:focus{
+      @extend :hover;
+    }
+    &:last-child{
+      @include border-radius(0 0 10px 10px);
+      border-bottom: none;
+    }
+    a{
+      font-size: 14px;
+      color: #444;
+    }
+  }
+}
+.section-container section .title a, .section-container .section .title a, .section-container.auto section .title a, .section-container.auto .section .title a{
+  font-size: 1.3em;
+  padding: 0.2em 2.6em;
+}
+.section-container.auto section .title, .section-container.auto .section .title{
+  @include border-radius(4px 4px 0 0);
+}
+.user-bio-box{
+  img{
+    margin-top: 15px;
+    @include border-radius(4px);
+  }
+  .change-pic{
+    text-align: center;
+    color: $secondary-color;
+    font-size: 0.8em;
+    display: block;
+  }
+}
+.save-bio{
+  float: right;
+}
+.dashboard-messages{
+  @extend .side-bar;
+  width: 95%;
+  margin: 15px auto 0;
+}
+.set-of-stars{
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+.dashboard-bar{
+  height: 30px;
+  width: 100%;
+  background: $secondary-color;
+  margin-top: -0.9375em;
+}

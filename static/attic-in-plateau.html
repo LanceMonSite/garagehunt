@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width" />
-	<title>GarageHunt │ Storage Space and Parking Spots from People in your Neighborhood </title>
-	<link rel="stylesheet" href="css/normalize.css" />
-	<link rel="stylesheet" href="css/app.css" />
-	<link rel="stylesheet" href="css/jquery-ui-1.10.1.custom.min.css"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>GarageHunt │ Storage Space and Parking Spots from People in your Neighborhood</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/custom.css">
 
+  <script src="js/vendor/custom.modernizr.js"></script>
 </head>
 <body class="subtle-bg">
 	<nav class="nav-bar">
@@ -22,7 +25,7 @@
 				<ul class="menu-buttons hide-for-small">
 					<li><a href="#" data-reveal-id="myModal">login</a></li>
 					<li><a href="#" data-reveal-id="secondModal">signup</a></li>
-					<li><a href="list-your-space.html" class="sign-up">list your space</a></li>
+					<li><a href="list-your-space.html" class="list-your-space-button">list your space</a></li>
 				</ul>
 			</div>
 		</div>
@@ -129,7 +132,7 @@
 						<label for="start-date">From:</label>
 						<div class="row collapse">
 							<div class="small-10 columns">
-								<input type="text" id="book-start-date" name="date" placeholder="">
+								<input id="book-start-date" type="text" name="date" placeholder="">
 							</div>
 							<div class="small-2 columns">
 								<span class="postfix"><span class="icon-calendar"></span></span>
@@ -140,7 +143,7 @@
 						<label for="end-date">Until:</label>
 						<div class="row collapse">
 							<div class="small-10 columns">
-								<input type="text" id="book-end-date" name="date" placeholder="">
+								<input id="book-end-date" type="text" name="date" placeholder="">
 							</div>
 							<div class="small-2 columns">
 								<span class="postfix"><span class="icon-calendar"></span></span>
@@ -161,7 +164,7 @@
 					</div>
 					
 				</div>
-       	<a href="#" class="button expand">Book Space</a> 
+       	<a class="button expand" href="#">Book Space</a> 
        	<a href="#">What happens when I click book?</a>			
       </div>
         <div class="space-owner">
@@ -180,7 +183,7 @@
         		</div>
         	</div>
         	<hr>
-        	<a href="" class="button contact-owner"> contact me</a>
+        	<a class="button contact-owner" href=""> contact me</a>
         </div>
         <h4>Similar listings</h4>
         <hr>
@@ -237,100 +240,46 @@
 		<!-- MAKE A FOOTER -->
 	</div>
 	</div>
-  <script src="js/vendor/jquery.js"></script>
+  <!-- DEPENDENCIES -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+  <script src="js/vendor/underscore-min.js"></script>
+  <script src="http://www.parsecdn.com/js/parse-1.2.2.min.js"></script>
+  <!-- FOUNDATION -->
   <script src="js/foundation/foundation.js"></script>
-	<script src="js/foundation/foundation.alerts.js"></script>
-	<script src="js/foundation/foundation.clearing.js"></script>
-	<script src="js/foundation/foundation.cookie.js"></script>
-	<script src="js/foundation/foundation.dropdown.js"></script>
-	<script src="js/foundation/foundation.forms.js"></script>
-	<script src="js/foundation/foundation.joyride.js"></script>
-	<script src="js/foundation/foundation.magellan.js"></script>
-	<script src="js/foundation/foundation.orbit.js"></script>
-	<script src="js/foundation/foundation.placeholder.js"></script>
-	<script src="js/foundation/foundation.reveal.js"></script>
-	<script src="js/foundation/foundation.section.js"></script>
-	<script src="js/foundation/foundation.tooltips.js"></script>
-	<script src="js/foundation/foundation.topbar.js"></script>
-	<script src="js/parsley.js"></script>
-	<script src="js/jquery-ui-1.10.1.custom.min.js"></script>
- 	<script src="js/main.js"></script>
- 	
- 	<!-- BEGIN LOGIN POPUP -->
-	<div id="myModal" class="reveal-modal small reveal-login">
-		<div class="modal-header">
-			<h4>Login to Garage Hunt!</h4>
-		</div>
-		<div class="modal-body">
-			<div class="social-wrapper">
-				<a href="#"><i class="icn-facebook"></i></a>
-				<a href="#"><i class="icn-twitter"></i></a>
-			</div>
-		</div>
-		<hr>
-		<div class="modal-body email-section">
-			<span class="or-seperator">OR</span>
-			<form id="login-form" class="email-form" data-validate="parsley">
-				<input type="email" data-trigger="change" data-required="true" data-type="email" data-required-message="Please enter your email address" data-type-email-message="Please enter a valid email address" placeholder="Email">
-				<input type="password" data-required="true" data-required-message="Please enter your password" placeholder="Password">
-				<div class="row">
-					<div class="large-6 small-6 columns remember">
-						<label for="checkbox1">
-						    <input type="checkbox" id="checkbox1" data-mincheck="0" data-group="mygroup">
-						    <span class="custom checkbox"></span> Remember Me
-						</label>
-					</div>
-					<div class="large-6 small-6 columns forgot">
-						<a href="#">Forgot Password</a>
-					</div>
-				</div>
-				<a href="#" class="button prefix">login</a>
-			</form>
-		</div>
-		<a class="close-reveal-modal">&#215;</a>
-	</div>
-	<!-- END LOGIN POPUP -->
-	<!-- BEGIN SIGNUP POPIP -->
-	<div id="secondModal" class="reveal-modal small reveal-login">
-		<div class="modal-header">
-			<h4>Sign up for Garage Hunt!</h4>
-		</div>
-		<div class="modal-body">
-			<div class="social-wrapper">
-				<a href="#"><i class="icn-facebook-signup"></i></a>
-				<a href="#"><i class="icn-twitter-signup"></i></a>
-			</div>
-		</div>
-		<hr>
-		<div class="modal-body email-section">
-			<span class="or-seperator">OR</span>
-			<a href="#" class="show-signup-form">
-				<p>Sign up using your e-mail address</p>
-			</a>
-			<form id="signup-form" class="signup-form" data-validate="parsley" style="display:none">
-				<input type="text" data-required="true" data-required-message="First Name is required" placeholder="First Name">
-				<input type="text" data-required="true" data-required-message="Last Name is required" placeholder="Last Name">
-				<input type="email" data-trigger="change" data-required="true" data-type="email" data-required-message="Email is Required" data-type-email-message="Please enter a valid email address" placeholder="Email">
-				<input id="password" type="password" data-required="true"  data-required-message="Password is required" data-minlength="6" data-minlength-message="Password should be at least 6 characters" placeholder="Password">
-				<input type="password" data-required="true" data-equalto="#password" data-required-message="Please confirm your password" data-equalto-message="Must match password" placeholder="Confirm Password">
-				<a href="#" class="button prefix">Create Account</a>
-			</form>
-			<p class="terms-conditions">
-				By clicking "<span class="fb-or-email">Signup with Facebook or Twitter</span>" you confirm that you accept the <a href="#">Terms of Service</a> and <a href="">Privacy Policy.</a> 
-			</p>
-		</div>
-		<a class="close-reveal-modal">&#215;</a>
-	</div>
-	<!-- END SIGNUP POPUP -->
-	<!-- SQUARE FOOT HELPER POPUP -->
-	<div id="show-sqft-help" class="reveal-modal small">
-		<div class="modal-header">
-			<h4>Help choosing sizing</h4>
-		</div>
-		<div class="modal-body">
-			<hr>
-			<a class="close-reveal-modal">&#215;</a>
-		</div>
-	</div>
+  <script src="js/foundation/foundation.alerts.js"></script>
+  <script src="js/foundation/foundation.clearing.js"></script>
+  <script src="js/foundation/foundation.cookie.js"></script>
+  <script src="js/foundation/foundation.dropdown.js"></script>
+  <script src="js/foundation/foundation.forms.js"></script>
+  <script src="js/foundation/foundation.joyride.js"></script>
+  <script src="js/foundation/foundation.magellan.js"></script>
+  <script src="js/foundation/foundation.orbit.js"></script>
+  <script src="js/foundation/foundation.placeholder.js"></script>
+  <script src="js/foundation/foundation.reveal.js"></script>
+  <script src="js/foundation/foundation.section.js"></script>
+  <script src="js/foundation/foundation.tooltips.js"></script>
+  <script src="js/foundation/foundation.topbar.js"></script>
+  <!-- EXTRA LIBRARIES -->
+  <script src="js/vendor/parsley.js"></script>
+  <!-- MVC -->
+  <script src="js/app/tmpl.js"></script>
+  <script src="js/app/models.js"></script>
+  <script src="js/app/views.js"></script>
+  <script src="js/app/router.js"></script>
+  <!-- CUSTOM -->
+  <script src="js/main.js"></script>
+  <!-- ANALYTICS -->
+  <script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39182231-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
 </body>
 </html>
