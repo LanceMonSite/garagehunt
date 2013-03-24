@@ -7,34 +7,7 @@
 			</div>
 			<hr>
 			<div class="lys-signup">
-				<form id="storage-form" class="custom">
-					<div class="row">
-        		<div class="large-6 columns">
-        			<label for="space-size" ><span>Storage Size</span> </label>
-		        	<div class="row">
-	        			<select id="space-size">
-									<option DISABLED selected>Please Choose</option>
-									<option value="25">25 Sq. Ft.</option>
-									<option value="50">50 Sq. Ft.</option>
-									<option value="75">75 Sq. Ft.</option>
-									<option value="100">100 Sq. Ft.</option>
-									<option value="150">150 Sq. Ft.</option>
-									<option value="200">200 Sq. Ft.</option>
-									<option value="300">300 Sq. Ft.</option>
-									<option value="over9000">500+ Sq. Ft.</option>
-		       			</select>
-	        			<span><a href="sq-ft-helper" class="postfix need-help" data-reveal-id="show-sqft-help">See sizing guide</a></span>
-		        	</div>
-		        </div>
-        		<div class="large-6 columns">
-      				<label for="private-entrance">Private Entrance</label>
-	          	<select id="private-entrance">
-							<option DISABLED selected>Please Choose</option>
-							<option value="yes">Yes</option>
-							<option value="no">No</option>
-	          	</select>
-        		</div>
-      		</div>
+				<form id="js-storage-form" class="custom">
 			    <div class="row">
 		        <div class="large-12 columns">
 			        <label for="storage-title">Title</label>
@@ -60,7 +33,7 @@
 			    <div class="row">
 		        <div class="large-12 columns">
 			        <label for="storage-image">Add Images</label>
-			        <input type="file" id="storage-image">
+			        <input type="file" id="js-storage-image">
 		        </div>
 			    </div>
 			    <hr>
@@ -79,12 +52,12 @@
 			    <div class="row">
 		        <div class="large-8 columns">
 	          	<label for="str-telephone">Telephone</label>
-							<input type="text" id="str-address" placeholder="1 (555)-5555">
+							<input type="text" id="telephone" placeholder="1 (555)-5555">
 		        </div>
 			    </div> 
 					<div class="row">
 			    	<div class="large-12 columns">
-			        <input type="submit" value="List My Space" class="button expand">
+			        <input id="js-lys-submit" type="submit" value="List My Space" class="button expand">
 		      	</div>
 			    </div>
 				</form>

@@ -42,6 +42,16 @@
     currentPage: ""
   };
 
+  Storagr.mvc = {
+    views: {
+
+    },
+
+    models: {
+
+    }
+  };
+
   Storagr.views = {
     // =======================================================
     // Main App View
@@ -292,6 +302,8 @@
     // List Your Space - Page
     // =======================================================
     listYourSpacePage: Parse.View.extend({
+      el: "div",
+      model: new Storagr.models.listYourSpace(),
       template: renderTemplate,
 
       initialize: function () {
@@ -299,6 +311,25 @@
           this.render();
           Storagr.state.currentPage = "!/list-your-space";
         }
+        this.model.getListings();
+      },
+
+      events: {
+        "change #js-storage-image": "fileSelectHandler",
+        "submit #js-storage-form": "submitForm"
+      },
+
+      fileSelectHandler: function(e) {
+        this.model.fileSelectHandler(e);
+      },
+
+      upload: function() {
+        this.model.upload();
+      },
+
+      submitForm: function(e) {
+        e.preventDefault();
+        this.model.submitForm();
       },
 
       render: function() {

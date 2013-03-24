@@ -1,7 +1,7 @@
 (function(window, $, _, Parse) {
   Parse.initialize(
-    "nYOW9blioKxaqbHySYryq4t220leMIcZhIjKc4ap",
-    "0CaMVQlg64NyfvDf4zH9ILsvzLpAQoqBQmk44S08"
+    "63jyWNcqFPNn3rFMwjk8cENuW5xNmKsWLZkGvlCj",
+    "UZfcStAw3ws7E5H0yoofeKvyKy1uyGY4GouAu8Dk"
   );
 
   $(document).ready(function() {
