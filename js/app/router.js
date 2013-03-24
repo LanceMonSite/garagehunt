@@ -10,12 +10,12 @@
         "!/list-your-space": "listYourSpace"
       },
 
-      listYourSpace: function() {
-        new Storagr.views.listYourSpacePage();
-      },
-
       index: function() {
         new Storagr.views.indexPage();
+      },
+
+      listYourSpace: function() {
+        new Storagr.views.listYourSpacePage();
       }
     })
   };
