@@ -1,18 +1,14 @@
-@import "social/*.png";
-$social: sprite-map("social/*.png");
-i{
-	background: $social;
-	display: inline-block;
-}
-@each $i in sprite_names($social){
-	.icn-#{$i}{
-		background-position: sprite-position($social, $i);
-		@include sprite-dimensions($social, $i);
-	}
-}
 .reveal-modal{
 	hr{
 		margin: 0;
+	}
+	&.my-reveal{
+		width: 545px;
+		margin-left: -272.5px;
+		@media only screen and (max-width: 600px){
+			width: 90%;
+			margin-left: -45%;
+		}
 	}
 }
 .modal-header{
@@ -33,49 +29,93 @@ i{
 		padding: 30px 30px 10px;
 	}
 }
+
 .social-wrapper{
 	margin: 10px auto 20px;
 	text-align: center;
 }
-.icn-facebook{
+.facebook-login{
+	margin: 0 auto;
 	margin-bottom: 0;
-	margin-right: 15px;
-	@media screen and (max-width: 483px){
-		margin-right: 0;
-		margin-bottom: 5px;
+	@include background-image(linear-gradient(#6f8dca, #5872aa));
+	@include border-radius(4px);
+	color: #fff;
+	max-width: 230px;
+	@media only screen and (max-width: 326px){
+		max-width: 145px;
 	}
-	@media only screen and (min-width: 768px) and (max-width: 1260px){
-		margin-right: 0;
-		margin-bottom: 5px;
+	@media only screen and (max-width: 769px){
+		margin-bottom: 15px;
 	}
 	&:hover{
-		background-position: sprite-position($social, facebook-hover);
+		@include background-image(linear-gradient(#5872aa, #6f8dca));
 	}
 }
-.icn-twitter{
-	margin-bottom: 0;
-	@media screen and (max-width: 483px){
-		margin-bottom: 5px;
-	}
-	@media only screen and (min-width: 768px) and (max-width: 1260px){
-		margin-bottom: 5px;
-	}
-	&:hover{
-		background-position: sprite-position($social, twitter-hover);
+.fb-left{
+  padding: 0 13px;
+  vertical-align: bottom;
+  height: 35px;
+  line-height: 45px;
+  display: inline-block;
+  border-right: 1px solid #2b497b;
+}
+.fb-main{
+	vertical-align: top;
+	padding: 10px 13px;
+	display: inline-block;
+	&:after{
+		content: "Login with Facebook";
+		@media only screen and (max-width: 326px){
+			content: "Facebook";
+		}
 	}
 }
-.icn-facebook-signup{
-	@extend .icn-facebook;
-	background-position: sprite-position($social, facebook-signup);
+.twitter-login{
+	@extend .facebook-login;
+	@include background-image(linear-gradient(#48c4f8, #259acf));
 	&:hover{
-		background-position: sprite-position($social, facebook-signup-hover);
+		@include background-image(linear-gradient(#259acf, #48c4f8));
 	}
 }
-.icn-twitter-signup{
-	@extend .icn-twitter;
-	background-position: sprite-position($social, twitter-signup);
-	&:hover{
-		background-position: sprite-position($social, twitter-signup-hover);
+.tw-main{
+	@extend .fb-main;
+		&:after{
+		content: "Login with Twitter";
+		@media only screen and (max-width: 326px){
+			content: "Twitter";
+		}
+	}
+}
+.tw-left{
+	@extend .fb-left;
+	padding: 0 8px;
+	margin-left: -20px;
+  line-height: 35px;
+  font-size: 1.53em;
+  border-right: 1px solid #0c7fb3;
+}
+.facebook-signup{
+	@extend .facebook-login;
+}
+.twitter-signup{
+	@extend .twitter-login;
+}
+.fb-main-sup{
+	@extend .fb-main;
+		&:after{
+		content: "Signup with Facebook";
+		@media only screen and (max-width: 326px){
+			content: "Facebook";
+		}
+	}
+}
+.tw-main-sup{
+	@extend .tw-main;
+		&:after{
+		content: "Signup with Twitter";
+		@media only screen and (max-width: 326px){
+			content: "Twitter";
+		}
 	}
 }
 //media query

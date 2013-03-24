@@ -9,6 +9,7 @@
 @import "listyourspace";
 @import "searchresult";
 @import "post-page";
+@import "my-account";
 
 // Import specific parts of Foundation by commenting the import "foundation"
 // and uncommenting what you want below. You must uncomment the following if customizing
@@ -52,9 +53,8 @@
 @include font-face("Metrophobic", font-files("Metrophobic-webfont.eot", "Metrophobic-webfont.svg", "Metrophobic-webfont.ttf", "Metrophobic-webfont.woff"));
 
 body{
-	padding: 60px 0 0 0;
+	padding: 60x 0 0 0;
 }
-
 .subtle-bg{
 	@include background(image-url("satinweave.png"));
 	padding: 100px 0 0 0;
@@ -62,49 +62,78 @@ body{
 h1,h2,h3,h4,h5{
 	font-family:  $body-font-family;
 }
+.bs-load {
+  position: absolute;
+  top: 3px;
+  left: 50%;
+  color: $primary-color;
+  padding: 5px;
+  z-index: 9999;
+}
 .nav-bar{
 	position: fixed;
-	@include box-shadow(0px 3px 3px rgba(50, 50, 50, 0.50));
+	
 	top: 0;
 	width: 100%;
-	padding: 20px 0;
-	@include background-image(linear-gradient(white, #eaeaea));
+	
 	z-index: 98;
+	height: 55px;
 }
+.contain-to-grid{
+	@include background-image(linear-gradient(white, #eaeaea));
+	@include box-shadow(0px 3px 3px rgba(50, 50, 50, 0.50));
+}
+.top-bar{
+	margin-bottom: 0 !important; 
+}
+.top-bar-section ul{
+	background: none;
+}
+.top-bar-section ul li > a{
+	background: none;
+}
+.top-bar-section > ul > .divider{
+	border-color: rgba(#ccc, 0.3);
+}
+.nav-content{
+		padding: 5px 0;
+}
+.top-bar .toggle-topbar.menu-icon a{
+	border-left: 1px solid #DDDDDD;
+	span{
+	@include box-shadow(0 8px 0 2px #666, 0 15px 0 2px #666, 0 22px 0 2px #666);
+	width: 23px;
+	}
+}
+.top-bar .toggle-topbar.menu-icon a{}
 .logo{
-	a{
-		@include background(image-url("logo.png") no-repeat); 
-		height: image-height("logo.png");
-		width: image-width("logo.png");
-		display: block;	
+	@include background(image-url("logo.png") no-repeat scroll 0 center / 190px 25px); 
+	height: 45px;
+	width: 222px;
+	display: block;	
+	@media only screen and (max-width: 768px){
+		margin-left: 10px;
 	}
 }
-.menu-buttons{
-	padding: 10px 0;
-	text-align: right;
-	line-height: 1;
-	margin-bottom: 0;
-	li{
-		list-style: none;
-		display: inline;
-		padding: 0 10px;
-	}
-	a{
-		color: #234c7d;
-		&:hover{
-			color: lighten(#234c7d, 15%);
-		}
-	}
-}
-.sign-up{
-	background: #ED560A;
-	color: #fff !important;
-	font-weight: bold;
-	@include border-radius(4px);
-	padding: 5px 10px;
+.menu-login{
+	font-variant:small-caps;
 	&:hover{
-		color: #fff;
-		background: darken(#ED560A, 5%); 
+		@include background-image(linear-gradient(#eaeaea, white) !important);
+	}
+}
+.menu-signup{
+	@extend .menu-login;
+}
+.logged-in-item{
+	@extend .menu-login;
+}
+.list-your-space-button{
+	font-variant:small-caps;
+	font-weight: bold !important;
+	@include background-image($primary-gradient !important);
+	color: #fff !important;
+	&:hover{
+		@include background-image($primary-gradient-inverse !important);
 	}
 }
 .search-area{
@@ -204,6 +233,9 @@ h1,h2,h3,h4,h5{
 	margin: 0 auto 40px;
 	img{
 		position: absolute;
+		top: 0;
+	}
+	&:hover > .img-caption{
 		top: 0;
 	}
 }
@@ -333,4 +365,7 @@ form.custom .custom.dropdown{
 	.lys-text{
 	padding: 30px 70px;
 	}
+}
+.something{
+	@extend .columns;
 }

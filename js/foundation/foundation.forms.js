@@ -6,7 +6,7 @@
   Foundation.libs.forms = {
     name : 'forms',
 
-    version : '4.0.0',
+    version : '4.0.4',
 
     settings : {
       disable_class: 'no-custom'
@@ -33,11 +33,11 @@
     },
 
     assemble : function () {
-      $('form.custom input[type="radio"]').not('[data-customforms="disabled"]')
+      $('form.custom input[type="radio"]', $(this.scope)).not('[data-customforms="disabled"]')
         .each(this.append_custom_markup);
-      $('form.custom input[type="checkbox"]').not('[data-customforms="disabled"]')
+      $('form.custom input[type="checkbox"]', $(this.scope)).not('[data-customforms="disabled"]')
         .each(this.append_custom_markup);
-      $('form.custom select').not('[data-customforms="disabled"]')
+      $('form.custom select', $(this.scope)).not('[data-customforms="disabled"]')
         .each(this.append_custom_select);
     },
 
@@ -45,16 +45,6 @@
       var self = this;
 
       $(this.scope)
-        .on('click.fndtn.forms', 'form.custom span.custom.checkbox', function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-          self.toggle_checkbox($(this));
-        })
-        .on('click.fndtn.forms', 'form.custom span.custom.radio', function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-          self.toggle_radio($(this));
-        })
         .on('change.fndtn.forms', 'form.custom select:not([data-customforms="disabled"])', function (e) {
           self.refresh_custom_select($(this));
         })
@@ -68,11 +58,7 @@
               $customCheckbox = $(this).find('span.custom.checkbox');
               //the checkbox might be outside after the label
               if ($customCheckbox.length == 0) {
-                $customCheckbox = $(this).next('span.custom.checkbox');
-              }
-              //the checkbox might be outside before the label
-              if ($customCheckbox.length == 0) {
-                $customCheckbox = $(this).prev('span.custom.checkbox');
+                $customCheckbox = $(this).siblings('span.custom.checkbox').first();
               }
               self.toggle_checkbox($customCheckbox);
             } else if ($associatedElement.attr('type') === 'radio') {
@@ -80,11 +66,7 @@
               $customRadio = $(this).find('span.custom.radio');
               //the radio might be outside after the label
               if ($customRadio.length == 0) {
-                $customRadio = $(this).next('span.custom.radio');
-              }
-              //the radio might be outside before the label
-              if ($customRadio.length == 0) {
-                $customRadio = $(this).prev('span.custom.radio');
+                $customRadio = $(this).siblings('span.custom.radio').first();
               }
               self.toggle_radio($customRadio);
             }
@@ -177,6 +159,7 @@
           $selector = $customSelect.find( ".selector" ),
           $options = $this.find( 'option' ),
           $selectedOption = $options.filter( ':selected' ),
+          copyClasses = $this.attr('class') ? $this.attr('class').split(' ') : [],
           maxWidth = 0,
           liHtml = '',
           $listItems,
@@ -190,7 +173,7 @@
                                $this.hasClass( 'large' )   ? 'large'   :
                                $this.hasClass( 'expand' )  ? 'expand'  : '';
 
-        $customSelect = $('<div class="' + ['custom', 'dropdown', customSelectSize ].join( ' ' ) + '"><a href="#" class="selector"></a><ul /></div>');
+        $customSelect = $('<div class="' + ['custom', 'dropdown', customSelectSize ].concat(copyClasses).filter(function(item, idx,arr){ if(item == '') return false; return arr.indexOf(item) == idx; }).join( ' ' ) + '"><a href="#" class="selector"></a><ul /></div>');
         $selector = $customSelect.find(".selector");
         $customList = $customSelect.find("ul");
         liHtml = $options.map(function() { return "<li>" + $( this ).html() + "</li>"; } ).get().join( '' );

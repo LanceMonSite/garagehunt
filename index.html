@@ -13,24 +13,56 @@
   <script src="js/vendor/custom.modernizr.js"></script>
 </head>
 <body>
-  <div id="js-bsload" style="display:none">Loading...</div>
-  <nav class="nav-bar">
-    <div class="row">
-      <div class="large-3 small-10 columns logo">
-        <a href="/"></a>
-      </div>
-      <div class="menu-icon small-2 columns">
-        <a href="javascript:void(0)"><span></span> </a>
-      </div>
-      <div class="large-5 large-offset-4 columns">
-        <ul class="menu-buttons hide-for-small">
-          <li><a id="js-menu-login" data-reveal-id="js-login-modal" href="javascript:void(0)">login</a></li>
-          <li><a id="js-menu-signup" data-reveal-id="js-signup-modal" href="javascript:void(0)">signup</a></li>
-          <li><a id="js-menu-listyourspace" href="javascript:void(0)" class="sign-up">list your space</a></li>
+  <div class="bs-load" id="js-bsload" style="display:none"><span class="icon-spinner icon-spin icon-2x"></span></div>
+  <div class="contain-to-grid fixed">
+	 <nav class="top-bar">
+	 	<ul class="title-area">
+	 		<li class="logo">
+  			<a href="/"></a>
+  		</li>
+			<li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+  	</ul>
+	 	<section class="top-bar-section">
+  	<ul class="right">
+  		<!-- BEGIN DESKTOP LOGGED MENU ITEMS -->
+  		<li class="divider"></li>
+  		<li>
+        <a class="user-dropdown hide-for-small" href="#" data-dropdown="js-user-dropdown">
+        <img src="img/reza.jpg" alt="">
+        <span>reza</span><span class="icon-caret-down"></span>
+        </a>
+        <ul id="js-user-dropdown" class="f-dropdown user-dropdown-content" data-dropdown-content>
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Bookings</a></li>
+          <li><a href="#">Listings</a></li>
+          <li><a href="#">Account</a></li>
+          <li><a href="#">Log out</a></li>
         </ul>
-      </div>
-    </div>
+      </li>
+      <!-- END -->
+      <!-- BEGIN MOBILE LOGGED IN MENU ITEMS -->
+      <li><a class="show-for-small logged-in-item" href="#">dashboard</a></li>
+      <li class="divider show-for-small"></li>
+      <li><a class="show-for-small logged-in-item" href="#">bookings</a></li>
+      <li class="divider show-for-small"></li>
+      <li><a class="show-for-small logged-in-item" href="#">listings</a></li>
+      <li class="divider show-for-small"></li>
+      <li><a class="show-for-small logged-in-item" href="#">account</a></li>
+      <li class="divider show-for-small"></li>
+      <li><a class="show-for-small logged-in-item" href="#">log out</a></li>
+  		<!-- END -->
+  		<!-- BEGIN LOGGED OUT MENU ITEMS -->
+  		<li class="divider"></li>
+  		<li><a class="menu-login" id="js-menu-login" data-reveal-id="js-login-modal" href="javascript:void(0)">log in</a></li>
+  		<li class="divider"></li>
+      <li><a class="menu-signup" id="js-menu-signup" data-reveal-id="js-signup-modal" href="javascript:void(0)">sign up</a></li>
+      <!-- END -->
+      <li><a class="list-your-space-button" id="js-menu-listyourspace" href="javascript:void(0)">list your space</a></li>
+  	</ul>
+  	</section>
   </nav>
+  </div>
+ 
   <article id="js-page">
     <section class="home-page">
       <div class="search-area">
@@ -47,10 +79,10 @@
         <div class="row">
           <div class="large-10 large-centered columns">
             <div class="search-bar-wrapper">
-              <form action="#" class="custom">
+              <form class="custom" action="#">
                 <div class="row">
                   <div class="large-2 columns">
-                    <label for="storage-select" class="right inline">Find Me a</label>
+                    <label class="right inline" for="storage-select" >Find Me a</label>
                   </div>
                   <div class="large-3 columns">
                     <select id="storage-select">
@@ -59,13 +91,13 @@
                     </select>
                   </div>
                   <div class="large-1 columns">
-                    <label for="location-input" class="right inline">in</label>
+                    <label class="right inline" for="location-input">in</label>
                   </div>
                   <div class="large-4 columns city-input">
-                    <input type="text" id="location-input" placeholder="Toronto, ON">
+                    <input id="location-input" type="text" placeholder="Toronto, ON">
                   </div>
                   <div class="large-2 columns">
-                    <a href="javascript:void(0)" class="button prefix">Search</a>
+                    <a class="button prefix" href="javascript:void(0)">Search</a>
                   </div>
                 </div>
               </form>
@@ -125,7 +157,7 @@
                 <p>Want to make extra income while putting the empty space inside your home to good use? Whether you have an unused basement, garage or parking space, you can post it up for rent and earn money by allowing people to store their things.</p>
 
                 <p>Signing up is Free and only takes a few minutes!</p>
-                <a href="#lol" class="large button expand">List your space</a>
+                <a class="large button expand" href="#lol">List your space</a>
               </div>
             </div>
           </div>
