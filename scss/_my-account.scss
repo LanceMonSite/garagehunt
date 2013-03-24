@@ -83,8 +83,15 @@
   margin-bottom: 10px;
 }
 .dashboard-bar{
-  height: 30px;
+  height: 8px;
   width: 100%;
   background: $secondary-color;
   margin-top: -0.9375em;
+  margin-bottom: 0.5em;
+}
+.section-container.auto section.active .title, .section-container.auto .section.active .title{
+  background-color: $secondary-color;
+  a{
+    color: #fff;
+  }
 }
