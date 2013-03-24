@@ -1,3 +1,4 @@
+/*Loading box on the top*/
 #js-bsload {
   position: absolute;
   top: 0;
@@ -5,4 +6,33 @@
   background-color: red;
   padding: 5px;
   z-index: 9999;
+}
+
+/*Autocomplete location input*/
+.pac-container:after {
+  content: "" !important;
+}
+
+.pac-item {
+  padding: 0.5em;
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.pac-container > .pac-item:nth-child(odd) {
+  background: rgba(236, 236, 236, 0.7);
+}
+
+.pac-container > .pac-item:nth-child(odd):hover {
+  background: #274c74;
+}
+.pac-item:hover {
+  background: #274c74;
+  color: #fff;
+}
+.pac-selected {
+  background: #274c74 !important;
+  color: #fff;
 }

@@ -5,18 +5,9 @@
   );
 
   $(document).ready(function() {
-    // Initializes DOM manipulation for zurb
-    $(this).foundation();
-
     // Initializes the MVC
     new Storagr.views.main();
 
-    //homepage images text dropdown
-    $('.img-wrapper').on('mouseenter', (function() {
-      $(this).find('.img-caption').css('top', '0');
-    })).on('mouseleave', (function() {
-      $(this).find('.img-caption').css('top', '-220px');
-    }));
 
    // //DISPLAY CORRECT 'LIST YOUR SPACE' FORM
    //  $('#space-type').change(function(){

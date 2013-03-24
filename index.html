@@ -14,125 +14,15 @@
 </head>
 <body>
   <div id="js-bsload" style="display:none">Loading...</div>
-  <nav class="nav-bar">
-    <div class="row">
-      <div class="large-3 small-10 columns logo">
-        <a href="/"></a>
-      </div>
-      <div class="menu-icon small-2 columns">
-        <a href="javascript:void(0)"><span></span> </a>
-      </div>
-      <div class="large-5 large-offset-4 columns">
-        <ul class="menu-buttons hide-for-small">
-          <li><a id="js-menu-login" data-reveal-id="js-login-modal" href="javascript:void(0)">login</a></li>
-          <li><a id="js-menu-signup" data-reveal-id="js-signup-modal" href="javascript:void(0)">signup</a></li>
-          <li><a id="js-menu-listyourspace" href="#!/list-your-space" class="sign-up">list your space</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <article id="js-page">
-    <section class="home-page">
-      <div class="search-area">
-        <div class="row">
-          <div class="large-8 large-centered columns">
-            <div class="h1-wrapper">
-              <h2>Storage Space and Parking Spots</h2>
-            </div>
-            <div class="h1-wrapper">
-              <h2>from People in your Neighborhood</h2>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="large-10 large-centered columns">
-            <div class="search-bar-wrapper">
-              <form action="#" class="custom">
-                <div class="row">
-                  <div class="large-2 columns">
-                    <label for="storage-select" class="right inline">Find Me a</label>
-                  </div>
-                  <div class="large-3 columns">
-                    <select id="storage-select">
-                      <option value="storage" selected>Storage Space</option>
-                      <option value="parking">Parking Spot</option>
-                    </select>
-                  </div>
-                  <div class="large-1 columns">
-                    <label for="location-input" class="right inline">in</label>
-                  </div>
-                  <div class="large-4 columns city-input">
-                    <input type="text" id="location-input" placeholder="Toronto, ON">
-                  </div>
-                  <div class="large-2 columns">
-                    <a href="javascript:void(0)" class="button prefix">Search</a>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="under-fold">
-        <div class="how-it-works">
-          <div class="row">
-            <div class="large-3 columns">
-              <div class="img-wrapper">
-                <img src="img/browse-map.png" alt="">
-                <div class="img-caption">
-                  <h5>BROWSE <br/>THROUGH LOCAL <br/>LISTINGS</h5>
-                </div>
-              </div>
-            </div>
-            <div class="large-3 columns">
-              <div class="img-wrapper">
-                <img src="img/find-listing.png" alt="">
-                <div class="img-caption">
-                  <h5>FIND A SPACE <br/>CLOSE TO YOU</h5>
-                </div>
-              </div>
-            </div>
-            <div class="large-3 columns">
-              <div class="img-wrapper">
-                <img src="img/book-space.png" alt="">
-                <div class="img-caption">
-                    <h5>RESERVE YOUR <br/> SPACE ONLINE</h5>
-                </div>
-              </div>
-            </div>
-            <div class="large-3 columns">
-              <div class="img-wrapper">
-                <img src="img/clutter-free.png" alt="">
-                <div class="img-caption">
-                    <h5>FREE THE CLUTTER <br/> IN YOUR HOME</h5>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="list-your-space">
-          <div class="row">
-            <div class="large-10 large-centered columns">
-              <h1>List your Empty Space. Earn Money!</h1>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-5 columns">
-              <img src="img/space-lister1.png" alt="">
-            </div>
-            <div class="large-7 columns">
-              <div class="lys-text">
-                <p>Want to make extra income while putting the empty space inside your home to good use? Whether you have an unused basement, garage or parking space, you can post it up for rent and earn money by allowing people to store their things.</p>
-
-                <p>Signing up is Free and only takes a few minutes!</p>
-                <a href="#lol" class="large button expand">List your space</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </article>
+  <div id="js-menu">
+    <!-- Menu injection goes here -->
+  </div>
+  <div id="js-page">
+    <!-- Ajax injected pages goes here -->
+  </div>
+  <div id="js-modals-section">
+    <!-- Modals goes here -->
+  </div>
   <footer>
     <!-- Shit tons of links goes here -->
   </footer>
@@ -158,6 +48,8 @@
   <script src="js/foundation/foundation.tooltips.js"></script>
   <script src="js/foundation/foundation.topbar.js"></script>
   <!-- EXTRA LIBRARIES -->
+  <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyD_KQUhq5bQ9vfIUcYdSZcvQnxbTzH7vcE&sensor=false&libraries=places"></script>
+  <script src="js/vendor/gmap3.js"></script>
   <script src="js/vendor/parsley.js"></script>
   <!-- MVC -->
   <script src="js/app/tmpl.js"></script>
