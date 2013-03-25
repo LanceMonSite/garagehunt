@@ -11,6 +11,7 @@
       className: "Listings",
       fileURL: [],
       file: "",
+
       fileSelectHandler: function(e) {
          var files = e.target.files || e.dataTransfer.files;
          this.file = files[0];
@@ -42,8 +43,6 @@
       },
 
       submitForm: function() {
-
-        //stores the form's values in table
         this.set("title", $('#storage-title').val());
         this.set("description", $('#description').val());
         this.set("date_begin", $('#start-date').val());
@@ -56,7 +55,7 @@
         this.save();
       },
 
-      getListings: function(){
+      getListings: function() {
         var query = new Parse.Query(this.className);
         query.find({
           success: function(results) {
