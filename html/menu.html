@@ -2,23 +2,25 @@
   <nav class="top-bar">
     <ul class="title-area">
       <li><a class="logo" href="/"></a></li>
-      <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+      <li class="toggle-topbar menu-icon"><a href="javascript:void(0)"><span></span></a></li>
     </ul>
     <section class="top-bar-section">
       <ul class="right">
         <!-- BEGIN DESKTOP LOGGED IN MENU ITEMS -->
+        <% if (rc.name) { %>
         <li class="divider"></li>
         <li>
           <a class="user-dropdown hide-for-small" id="js-dropdown" data-dropdown="js-user-dropdown" href="javascript:void(0)">
             <img src="img/reza.jpg" data-dropdown="js-user-dropdown" alt="profile picture">
-            <span data-dropdown="js-user-dropdown">reza</span><span class="icon-caret-down" data-dropdown="js-user-dropdown"></span>
+            <span data-dropdown="js-user-dropdown"><%= rc.name %></span>
+            <span class="icon-caret-down" data-dropdown="js-user-dropdown"></span>
           </a>
           <ul class="f-dropdown user-dropdown-content" id="js-user-dropdown" data-dropdown-content>
             <li><a href="#">Dashboard</a></li>
             <li><a href="#">Bookings</a></li>
             <li><a href="#">Listings</a></li>
             <li><a href="#">Account</a></li>
-            <li><a href="#">Log out</a></li>
+            <li><a class="js-logout" href="javascript:void(0)">Log out</a></li>
           </ul>
         </li>
         <!-- END -->
@@ -31,14 +33,16 @@
         <li class="divider show-for-small"></li>
         <li><a class="show-for-small logged-in-item" href="#">account</a></li>
         <li class="divider show-for-small"></li>
-        <li><a class="show-for-small logged-in-item" href="#">log out</a></li>
+        <li><a class="show-for-small logged-in-item js-logout" href="javascript:void(0)">log out</a></li>
         <!-- END -->
+        <% } else { %>
         <!-- BEGIN LOGGED OUT MENU ITEMS -->
         <li class="divider"></li>
         <li><a class="menu-login" id="js-menu-login" href="javascript:void(0)">log in</a></li>
         <li class="divider"></li>
         <li><a class="menu-signup" id="js-menu-signup" href="javascript:void(0)">sign up</a></li>
         <!-- END -->
+        <% } %>
         <li><a class="list-your-space-button" id="js-menu-listyourspace" href="#!/list-your-space">list your space</a></li>
       </ul>
     </section>

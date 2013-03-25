@@ -2,9 +2,10 @@
   "use strict";
   window.Storagr = window.Storagr || {};
   var Storagr = window.Storagr;
+  _.templateSettings.variable = "rc";
 
   // Function that runs in blocking mode to fetch the templates
-  var renderTemplate = function renderTemplate(tmpl_name, tmpl_data) {
+  var renderTemplate = function(tmpl_name, tmpl_data) {
     var ajaxPromise, dff = $.Deferred();
     if (!renderTemplate.tmpl_cache) {
       renderTemplate.tmpl_cache = {};
@@ -18,11 +19,12 @@
         method: 'GET',
         dataType: 'html',
         beforeSend: function() {
-          // TODO: only slide if not visible
-          $('#js-bsload').slideDown(100);
+          if (Storagr.state.$loader.is(":hidden")) {
+            Storagr.state.$loader.show();
+          }
         },
         complete: function() {
-          $('#js-bsload').slideUp(100);
+          Storagr.state.$loader.hide();
         }
       });
 
@@ -39,7 +41,17 @@
   };
 
   Storagr.state = {
-    currentPage: ""
+    currentPage: "",
+    $loader: $('#js-bsload')
+  };
+
+  Storagr.mvc = {
+    views: {
+      // NAV
+    },
+
+    models: {
+    }
   };
 
   Storagr.views = {
@@ -54,7 +66,7 @@
         Parse.history.start();
 
         // Initialize the menu
-        new Storagr.views.menu();
+        Storagr.mvc.views.nav = new Storagr.views.menu();
       }
     }),
 
@@ -62,11 +74,19 @@
     // Menu navar
     // =======================================================
     menu: Parse.View.extend({
-      el: 'div',
-      template: renderTemplate,
+      el: '#js-menu',
+      template: _.template( $('#tmpl-navbar').html() ),
 
-      initialize: function () {
-        this.render();
+      initialize: function() {
+        var user = Parse.User.current();
+        var data = {};
+        var fullname;
+        if (user) {
+          fullname = user.get("fullname");
+          data.name = fullname.substring(0, fullname.indexOf(' '));
+          data.isSocial = false;
+        }
+        this.render(data);
       },
 
       events: {
@@ -74,7 +94,8 @@
         "click #js-menu-signup": "showModalSignup",
 
         "click #js-menu-listyourspace": "pivotToListYourSpace",
-        "click #js-dropdown": "dropUserMenu"
+
+        "click .js-logout": "logoutUser"
       },
 
       showModalLogin: function() {
@@ -89,22 +110,14 @@
         new Storagr.views.listYourSpacePage();
       },
 
-      dropUserMenu: function() {
-        console.log("msg");
-        var $dropdown = $('#js-user-dropdown');
-        $dropdown.toggleClass("open");
-        $dropdown.foundation();
+      logoutUser: function() {
+        Parse.User.logOut();
+        this.render({});
       },
 
-      render: function() {
-        var promiseTmpl = this.template('menu.html', {});
-        if (typeof promiseTmpl === "string") {
-          $('#js-menu').html(promiseTmpl);
-        } else {
-          promiseTmpl.done(function(tmpl){
-            $('#js-menu').html(tmpl);
-          });
-        }
+      render: function(data) {
+        this.$el.html(this.template(data));
+        $(document.body).foundation();
       }
     }),
 
@@ -112,10 +125,10 @@
     // Login - Modal
     // =======================================================
     loginModal: Parse.View.extend({
-      el: 'div',
+      el: '#js-modals-section',
       template: renderTemplate,
 
-      initialize: function () {
+      initialize: function() {
         this.render();
       },
 
@@ -135,7 +148,7 @@
           ];
           $target.find("#js-lo-submit").attr("disabled", "true");
           this.signInUser($nodeArr);
-          $('#js-bsload').slideDown(100);
+          Storagr.state.$loader.show();
         }
         e.preventDefault();
       },
@@ -143,13 +156,21 @@
       signInUser: function($nodeArr) {
         Parse.User.logIn($nodeArr[1].val(), $nodeArr[2].val(), {
           success: function(user) {
-            $('#js-bsload').slideUp(100);
+            var data = {};
+            var fullname;
+
+            Storagr.state.$loader.hide();
             $('#js-login-modal').find('.close-reveal-modal').trigger('click');
             $nodeArr[0].find("#js-lo-submit").removeAttr("disabled");
             $nodeArr[0][0].reset();
+
+            fullname = user.get("fullname");
+            data.name = fullname.substring(0, fullname.indexOf(' '));
+            data.isSocial = false;
+            Storagr.mvc.views.nav.render(data);
           },
           error: function(user, error) {
-            $('#js-bsload').slideUp(100);
+            Storagr.state.$loader.hide();
             $nodeArr[0].find("#js-lo-submit").removeAttr("disabled");
             alert("Error: " + error.code + " " + error.message);
           }
@@ -166,12 +187,13 @@
       },
 
       render: function() {
+        var _this = this;
         var promiseTmpl = this.template('login.html', {});
         if (typeof promiseTmpl === "string") {
           $('#js-login-modal').foundation('reveal', 'open');
         } else {
-          promiseTmpl.done(function(tmpl){
-            $('#js-modals-section').append(tmpl);
+          promiseTmpl.done(function(tmpl) {
+            _this.$el.append(tmpl);
             $('#js-login-modal').foundation('reveal', 'open');
           });
         }
@@ -182,10 +204,10 @@
     // Signup - Modal
     // =======================================================
     signupModal: Parse.View.extend({
-      el: 'div',
+      el: '#js-modals-section',
       template: renderTemplate,
 
-      initialize: function () {
+      initialize: function() {
         this.render();
       },
 
@@ -201,6 +223,7 @@
         $target.hide();
         $signup.find('#js-signup-form').slideDown();
         $signup.find('.fb-or-email').text('"Create Account"');
+        $('#js-su-fullname').focus();
       },
 
       submitSignup: function(e) {
@@ -215,7 +238,7 @@
           ];
           $target.find("#js-su-submit").attr("disabled", "true");
           this.signUpUser($nodeArr);
-          $('#js-bsload').slideDown(100);
+          Storagr.state.$loader.show();
         }
         e.preventDefault();
       },
@@ -228,13 +251,21 @@
 
         user.signUp(null, {
           success: function(user) {
-            $('#js-bsload').slideUp(100);
+            var data = {};
+            var fullname;
+
+            Storagr.state.$loader.hide();
             $('#js-signup-modal').find('.close-reveal-modal').trigger('click');
             $nodeArr[0].find("#js-su-submit").removeAttr("disabled");
             $nodeArr[0][0].reset();
+
+            fullname = user.get("fullname");
+            data.name = fullname.substring(0, fullname.indexOf(' '));
+            data.isSocial = false;
+            Storagr.mvc.views.nav.render(data);
           },
           error: function(user, error) {
-            $('#js-bsload').slideUp(100);
+            Storagr.state.$loader.hide();
             $nodeArr[0].find("#js-su-submit").removeAttr("disabled");
             alert("Error: " + error.code + " " + error.message);
           }
@@ -251,12 +282,13 @@
       },
 
       render: function() {
+        var _this = this;
         var promiseTmpl = this.template('signup.html', {});
         if (typeof promiseTmpl === "string") {
           $('#js-signup-modal').foundation('reveal', 'open');
         } else {
           promiseTmpl.done(function(tmpl){
-            $('#js-modals-section').append(tmpl);
+            _this.$el.append(tmpl);
             $('#js-signup-modal').foundation('reveal', 'open');
           });
         }
@@ -267,9 +299,10 @@
     // Index - Page
     // =======================================================
     indexPage: Parse.View.extend({
+      el: "#js-page",
       template: renderTemplate,
 
-      initialize: function () {
+      initialize: function() {
         if (Storagr.state.currentPage !== "/") {
           this.render();
           Storagr.state.currentPage = "/";
@@ -277,12 +310,13 @@
       },
 
       render: function() {
+        var _this = this;
         var promiseTmpl = this.template('home.html', {});
         if (typeof promiseTmpl === "string") {
-          $('#js-page').empty().html(promiseTmpl);
+          _this.$el.html(promiseTmpl);
         } else {
-          promiseTmpl.done(function(tmpl){
-            $('#js-page').empty().html(tmpl);
+          promiseTmpl.done(function(tmpl) {
+            _this.$el.html(tmpl);
           });
         }
       }
@@ -292,9 +326,10 @@
     // List Your Space - Page
     // =======================================================
     listYourSpacePage: Parse.View.extend({
+      el: "#js-page",
       template: renderTemplate,
 
-      initialize: function () {
+      initialize: function() {
         if (Storagr.state.currentPage !== "!/list-your-space") {
           this.render();
           Storagr.state.currentPage = "!/list-your-space";
@@ -302,12 +337,13 @@
       },
 
       render: function() {
+        var _this = this;
         var promiseTmpl = this.template('list-your-space.html', {});
         if (typeof promiseTmpl === "string") {
-          $('#js-page').empty().html(promiseTmpl);
+          _this.$el.html(promiseTmpl);
         } else {
           promiseTmpl.done(function(tmpl) {
-            $('#js-page').empty().html(tmpl);
+            _this.$el.html(tmpl);
           });
         }
       }
