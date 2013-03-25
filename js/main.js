@@ -8,40 +8,6 @@
     // Initializes the MVC
     new Storagr.views.main();
 
-    // //===================
-    // //list-your-space.html
-    // //===================
-    //   $('#space-type').change(function(){
-    //     if($(this).val() == "parking"){
-    //       $('#storage-form').hide();
-    //       $('#parking-form').show();
-    //       $('#storage-parking-form').hide();
-    //     }
-    //     else if($(this).val() == "storage"){
-    //       $('#parking-form').hide();
-    //       $('#storage-form').show();
-    //       $('#storage-parking-form').hide();
-    //     }
-    //     else if($(this).val() == "both"){
-    //       $('#parking-form').hide();
-    //       $('#storage-form').hide();
-    //       $('#storage-parking-form').show();
-    //     }
-    //   });
-
-    //   $('#start-date').datepicker({
-    //      onClose: function(dateText, inst) {
-    //         $('#end-date').focus();
-    //       }
-    //      });
-    //   $('#end-date').datepicker();
-    //   $('#prk-start-date').datepicker({
-    //      onClose: function(dateText, inst) {
-    //         $('#prk-end-date').focus();
-    //       }
-    //      });
-    //   $('#prk-end-date').datepicker();
-
     // //=====================
     // //attic-in-plateau.html
     // //=====================

@@ -93,8 +93,6 @@
         "click #js-menu-login": "showModalLogin",
         "click #js-menu-signup": "showModalSignup",
 
-        "click #js-menu-listyourspace": "pivotToListYourSpace",
-
         "click .js-logout": "logoutUser"
       },
 
@@ -104,10 +102,6 @@
 
       showModalSignup: function() {
         new Storagr.views.signupModal();
-      },
-
-      pivotToListYourSpace: function() {
-        new Storagr.views.listYourSpacePage();
       },
 
       logoutUser: function() {
@@ -303,10 +297,8 @@
       template: renderTemplate,
 
       initialize: function() {
-        if (Storagr.state.currentPage !== "/") {
-          this.render();
-          Storagr.state.currentPage = "/";
-        }
+        this.render();
+        Storagr.state.currentPage = "/";
       },
 
       render: function() {
@@ -327,13 +319,31 @@
     // =======================================================
     listYourSpacePage: Parse.View.extend({
       el: "#js-page",
+      model: new Storagr.models.listYourSpace(),
+
       template: renderTemplate,
 
       initialize: function() {
-        if (Storagr.state.currentPage !== "!/list-your-space") {
-          this.render();
-          Storagr.state.currentPage = "!/list-your-space";
-        }
+        this.render();
+        Storagr.state.currentPage = "!/list-your-space";
+      },
+
+      events: {
+        "change #js-storage-image": "fileSelectHandler",
+        "submit #js-storage-form": "submitForm"
+      },
+
+      fileSelectHandler: function(e) {
+        this.model.fileSelectHandler(e);
+      },
+
+      upload: function() {
+        this.model.upload();
+      },
+
+      submitForm: function(e) {
+        e.preventDefault();
+        this.model.submitForm();
       },
 
       render: function() {

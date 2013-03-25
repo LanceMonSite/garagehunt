@@ -8104,15 +8104,19 @@ form.custom .custom.checkbox {
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\0000330}}
 .f-dropdown.user-dropdown-content {
   max-width: 150px;
+  border: none;
+  -webkit-box-shadow: 0px 2px 2px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 0px 2px 2px rgba(50, 50, 50, 0.75);
+  box-shadow: 0px 2px 2px rgba(50, 50, 50, 0.75);
   -webkit-border-radius: 0 0 10px 10px;
   -moz-border-radius: 0 0 10px 10px;
   border-radius: 0 0 10px 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\0000333}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\0000335}}
 .f-dropdown.user-dropdown-content li {
   border-bottom: 1px solid #ececec;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\0000335}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\0000337}}
 .f-dropdown.user-dropdown-content li:hover, .f-dropdown.user-dropdown-content li:focus {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ed560a), color-stop(100%, #bc4408)) !important;
   background-image: -webkit-linear-gradient(#ed560a, #bc4408) !important;
@@ -8120,84 +8124,145 @@ form.custom .custom.checkbox {
   background-image: -o-linear-gradient(#ed560a, #bc4408) !important;
   background-image: linear-gradient(#ed560a, #bc4408) !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\0000338}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\0000340}}
 .f-dropdown.user-dropdown-content li:hover > a, .f-dropdown.user-dropdown-content li:focus > a {
   color: #fff;
+  background: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\0000344}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\0000347}}
 .f-dropdown.user-dropdown-content li:last-child {
   -webkit-border-radius: 0 0 10px 10px;
   -moz-border-radius: 0 0 10px 10px;
   border-radius: 0 0 10px 10px;
   border-bottom: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\0000348}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\0000351}}
 .f-dropdown.user-dropdown-content li a {
   font-size: 14px;
   color: #444;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\0000354}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\0000357}}
 .section-container section .title a, .section-container .section .title a, .section-container.auto section .title a, .section-container.auto .section .title a {
   font-size: 1.3em;
   padding: 0.2em 2.6em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\0000358}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\0000361}}
 .section-container.auto section .title, .section-container.auto .section .title {
   -webkit-border-radius: 4px 4px 0 0;
   -moz-border-radius: 4px 4px 0 0;
   border-radius: 4px 4px 0 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\0000362}}
+@media only screen and (min-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\0000364}}
+  .inside-section {
+    padding-left: 30px !important;
+  }
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\0000370}}
 .user-bio-box img {
   margin-top: 15px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\0000366}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\0000374}}
 .user-bio-box .change-pic {
   text-align: center;
   color: #234c7d;
   font-size: 0.8em;
   display: block;
 }
+@media only screen and (max-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\0000369}}
+  .user-bio-box {
+    text-align: center;
+  }
+}
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\0000373}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\0000384}}
 .save-bio {
   float: right;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\0000376}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\0000387}}
 .dashboard-messages {
   width: 95%;
   margin: 15px auto 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\0000381}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\0000392}}
 .set-of-stars {
   margin-top: -10px;
   margin-bottom: 10px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\0000385}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\0000396}}
 .dashboard-bar {
   height: 8px;
   width: 100%;
   background: #234c7d;
   margin-top: -0.9375em;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
+}
+@media only screen and (max-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\0000396}}
+  .dashboard-bar {
+    display: none;
+  }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\0000392}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\00003106}}
 .section-container.auto section.active .title, .section-container.auto .section.active .title {
   background-color: #234c7d;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\0000394}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\00003108}}
 .section-container.auto section.active .title a, .section-container.auto .section.active .title a {
   color: #fff;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\00003112}}
+.section-container section .title, .section-container .section .title, .section-container.auto section .title, .section-container.auto .section .title {
+  background-color: #fff;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\00003116}}
+.user-account-settings table {
+  border: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\00003119}}
+.user-account-settings table tr.even, .user-account-settings table tr.alt, .user-account-settings table tr:nth-of-type(2n) {
+  background: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\00003124}}
+.user-payout-settings h4 {
+  display: inline-block;
+  margin-right: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\00003128}}
+.user-payout-settings .icon-question-sign {
+  font-size: 1.3em;
+  color: #234c7d;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\00003132}}
+.user-payout-settings .payout-method {
+  margin: 0 auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\00003134}}
+.user-payout-settings .payout-method span {
+  font-size: 0.85em;
+  margin-left: 10px;
+}
+@media only screen and (max-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/webdev\/garagehunt\/garagehunt\/scss\/_my-account\.scss}line{font-family:\00003134}}
+  .user-payout-settings .payout-method span {
+    display: block;
+    margin-top: -0.75em;
+  }
 }
 
 @font-face {
