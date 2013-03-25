@@ -31,22 +31,22 @@
         <span>reza</span><span class="icon-caret-down"></span>
         </a>
         <ul id="js-user-dropdown" class="f-dropdown user-dropdown-content" data-dropdown-content>
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Bookings</a></li>
-          <li><a href="#">Listings</a></li>
-          <li><a href="#">Account</a></li>
+          <li><a href="my-account.html#dashboard">Dashboard</a></li>
+          <li><a href="my-account.html#bookings">Bookings</a></li>
+          <li><a href="my-account.html#listings">Listings</a></li>
+          <li><a href="my-account.html#inbox">Inbox</a></li>
           <li><a href="#">Log out</a></li>
         </ul>
       </li>
       <!-- END -->
       <!-- BEGIN MOBILE LOGGED IN MENU ITEMS -->
-      <li><a class="show-for-small logged-in-item" href="#">dashboard</a></li>
+      <li><a class="show-for-small logged-in-item" href="my-account.html#dashboard">dashboard</a></li>
       <li class="divider show-for-small"></li>
-      <li><a class="show-for-small logged-in-item" href="#">bookings</a></li>
+      <li><a class="show-for-small logged-in-item" href="my-account.html#bookings">bookings</a></li>
       <li class="divider show-for-small"></li>
-      <li><a class="show-for-small logged-in-item" href="#">listings</a></li>
+      <li><a class="show-for-small logged-in-item" href="my-account.html#listings">listings</a></li>
       <li class="divider show-for-small"></li>
-      <li><a class="show-for-small logged-in-item" href="#">account</a></li>
+      <li><a class="show-for-small logged-in-item" href="my-account.html#inbox">inbox</a></li>
       <li class="divider show-for-small"></li>
       <li><a class="show-for-small logged-in-item" href="#">log out</a></li>
       <!-- END -->
@@ -65,33 +65,64 @@
     
   </section>
   <div class="row">
-    <div class="section-container auto" data-section>
+    <div class="section-container auto" data-section data-options="deep_linking: true">
       <section class="section">
-        <p class="title"><a href="#">Dashboard</a></p>
-        <div class="content">
+        <p class="title"><a href="#dashboard">Dashboard</a></p>
+        <div class="content" data-slug="dashboard">
           <div class="row">
-            <div class="dashboard-bar">
-            </div>
-            <div class="large-6 columns user-bio-box">
-            <div class="row">
-              <div class="large-4 columns">
-                <img src="img/reza.jpg" alt=""> 
-                <a class="change-pic" href="#">change picture</a>      
-              </div>
-              <div class="large-8 columns">
-                <h3>Reza Khadjavi</h3>
-                <div class="set-of-stars">
-                  <span class="icon-star icon-large gold-star"></span>
-                  <span class="icon-star icon-large gold-star"></span>
-                  <span class="icon-star icon-large gold-star"></span>
-                  <span class="icon-star icon-large gold-star"></span>
-                  <span class="icon-star icon-large gray-star"></span>
+            <div class="dashboard-bar"></div>
+            <div class="large-6 columns inside-section">
+              <div class="row user-bio-box">
+                <div class="large-4 columns">
+                  <img src="img/reza.jpg" alt=""> 
+                  <a class="change-pic" href="#">change picture</a>      
                 </div>
-                
-                <textarea placeholder="BIO"></textarea>
-                <a class="small button save-bio" href="#">Save</a>
+                <div class="large-8 columns">
+                  <h3>Reza Khadjavi</h3>
+                  <div class="set-of-stars">
+                    <span class="icon-star icon-large gold-star"></span>
+                    <span class="icon-star icon-large gold-star"></span>
+                    <span class="icon-star icon-large gold-star"></span>
+                    <span class="icon-star icon-large gold-star"></span>
+                    <span class="icon-star icon-large gray-star"></span>
+                  </div>
+                  
+                  <textarea placeholder="BIO"></textarea>
+                  <a class="small button save-bio" href="#">Save</a>
+                </div>
               </div>
-            </div>
+              <hr>
+              <div class="row user-account-settings">
+                <div class="large-12 columns">
+                  <h4>Account Settings</h4>
+                  <table>
+                    <tr>
+                      <td><strong>Full Name:</strong></td>
+                      <td>Reza Khadjavi</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Email Address:</strong></td>
+                      <td>rkhadjavi@gmail.com</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Password:</strong></td>
+                      <td>************</td>
+                    </tr>
+                  </table>
+                  <a href="#" class="small button">Edit</a>
+                </div>
+              </div>
+              <hr>
+              <div class="row user-payout-settings">
+                <div class="large-12 columns">
+                  <h4>Payout Preference</h4>
+                  <span class="icon-question-sign tip-top" data-tooltip title="Choose how you would like to get paid when renters pay for your space"></span>
+                  <div class="payout-method">
+                    <a href="#" class="button">Add a Payout Method</a>
+                    <span>(Paypal, Direct Deposit etc..)</span>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="large-6 columns">
               <div class="dashboard-messages">
@@ -99,13 +130,18 @@
                 <hr>
                 <p>No new messages</p>
               </div>
+              <div class="dashboard-messages">
+                <h4>Ratings (0)</h4>
+                <hr>
+                <p>No ratings yet</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
       <section class="section">
-        <p class="title"><a href="#">Bookings</a></p>
-        <div class="content">
+        <p class="title"><a href="#bookings">Bookings</a></p>
+        <div class="content" data-slug="bookings">
           <div class="row">
             <div class="dashboard-bar">
             </div>
@@ -117,8 +153,8 @@
         </div>
       </section>
       <section class="section">
-        <p class="title"><a href="#">Listings</a></p>
-        <div class="content">
+        <p class="title"><a href="#listings">Listings</a></p>
+        <div class="content" data-slug="listings">
           <div class="row">
             <div class="dashboard-bar">
             </div>
@@ -130,8 +166,8 @@
         </div>
       </section>
       <section class="section">
-        <p class="title"><a href="#">Inbox</a></p>
-        <div class="content">
+        <p class="title"><a href="#inbox">Inbox</a></p>
+        <div class="content" data-slug="inbox">
           <div class="row">
             <div class="dashboard-bar">
             </div>
@@ -161,7 +197,7 @@
   <script src="js/foundation/foundation.clearing.js"></script>
   <script src="js/foundation/foundation.cookie.js"></script>
   <script src="js/foundation/foundation.dropdown.js"></script>
-  <script src="js/foundation/foundabtion.forms.js"></script>
+  <script src="js/foundation/foundation.forms.js"></script>
   <script src="js/foundation/foundation.joyride.js"></script>
   <script src="js/foundation/foundation.magellan.js"></script>
   <script src="js/foundation/foundation.orbit.js"></script>
@@ -171,14 +207,10 @@
   <script src="js/foundation/foundation.tooltips.js"></script>
   <script src="js/foundation/foundation.topbar.js"></script>
   <!-- EXTRA LIBRARIES -->
-  <script src="js/vendor/parsley.js"></script>
-  <!-- MVC -->
-  <script src="js/app/tmpl.js"></script>
-  <script src="js/app/models.js"></script>
-  <script src="js/app/views.js"></script>
-  <script src="js/app/router.js"></script>
-  <!-- CUSTOM -->
-  <script src="js/main.js"></script>
+
+  <script>
+    $(document).foundation();
+  </script>
   <!-- ANALYTICS -->
   <script>
     var _gaq = _gaq || [];

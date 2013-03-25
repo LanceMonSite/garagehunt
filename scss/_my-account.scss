@@ -29,6 +29,8 @@
 }
 .f-dropdown.user-dropdown-content{
   max-width: 150px;
+  border: none;
+  @include box-shadow(0px 2px 2px rgba(50, 50, 50, 0.75));
   @include border-radius(0 0 10px 10px);
   li{
     border-bottom: 1px solid #ececec;
@@ -37,6 +39,7 @@
     }
     &:hover > a{
       color: #fff;
+      background: none;
     }
     &:focus{
       @extend :hover;
@@ -58,6 +61,11 @@
 .section-container.auto section .title, .section-container.auto .section .title{
   @include border-radius(4px 4px 0 0);
 }
+.inside-section{
+  @media only screen and (min-width: 768px){
+    padding-left: 30px !important;
+  }
+}
 .user-bio-box{
   img{
     margin-top: 15px;
@@ -68,6 +76,9 @@
     color: $secondary-color;
     font-size: 0.8em;
     display: block;
+  }
+  @media only screen and (max-width: 768px){
+    text-align: center;
   }
 }
 .save-bio{
@@ -83,15 +94,50 @@
   margin-bottom: 10px;
 }
 .dashboard-bar{
+  @media only screen and (max-width: 768px){
+    display: none;
+  }
   height: 8px;
   width: 100%;
   background: $secondary-color;
   margin-top: -0.9375em;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
 }
 .section-container.auto section.active .title, .section-container.auto .section.active .title{
   background-color: $secondary-color;
   a{
     color: #fff;
+  }
+}
+.section-container section .title, .section-container .section .title, .section-container.auto section .title, .section-container.auto .section .title{
+  background-color: #fff;
+}
+.user-account-settings{
+  table{
+    border: none;
+  }
+  table tr.even, table tr.alt, table tr:nth-of-type(2n) {
+    background: none;
+  }
+}
+.user-payout-settings{
+  h4{
+    display: inline-block;
+    margin-right: 15px;
+  }
+  .icon-question-sign{
+    font-size: 1.3em;
+    color: $secondary-color;
+  }
+  .payout-method{
+    margin: 0 auto;
+    span{
+      font-size: 0.85em;
+      margin-left: 10px;
+      @media only screen and (max-width: 768px){
+        display: block;
+        margin-top: -0.75em;
+      }
+    }
   }
 }
